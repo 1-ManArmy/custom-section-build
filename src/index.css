@@ -15,6 +15,10 @@
   .animate-fadeIn {
     animation: fadeIn 0.5s ease-in-out;
   }
+  
+  .animate-gradient-spin {
+    animation: gradient-spin 3s linear infinite;
+  }
 }
 
 @keyframes fadeIn {
@@ -25,6 +29,24 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes gradient-spin {
+  0% {
+    background: linear-gradient(0deg, #a855f7, #ec4899, #3b82f6);
+  }
+  25% {
+    background: linear-gradient(90deg, #ec4899, #3b82f6, #a855f7);
+  }
+  50% {
+    background: linear-gradient(180deg, #3b82f6, #a855f7, #ec4899);
+  }
+  75% {
+    background: linear-gradient(270deg, #a855f7, #ec4899, #3b82f6);
+  }
+  100% {
+    background: linear-gradient(360deg, #ec4899, #3b82f6, #a855f7);
   }
 }
 
