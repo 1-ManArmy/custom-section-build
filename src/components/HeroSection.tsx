@@ -79,18 +79,45 @@ export function HeroSection() {
                   </Button>
                 </div>
 
-                {/* Image comparison */}
-                <div className="grid grid-cols-2 gap-3 pt-4">
-                  <div className="aspect-square bg-gradient-to-br from-pink-900/40 to-purple-900/60 rounded-xl overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="w-full h-full bg-gradient-to-br from-pink-600/20 to-purple-800/40 flex items-end justify-center p-6">
-                      <div className="w-12 h-16 bg-gradient-to-b from-pink-400/80 to-pink-600/90 rounded-t-full shadow-lg opacity-80"></div>
+                {/* Terminal Interface */}
+                <div className="pt-4">
+                  <div className="bg-black/90 border border-green-500/30 rounded-lg overflow-hidden font-mono">
+                    {/* Terminal Header */}
+                    <div className="bg-gray-800/50 px-4 py-2 border-b border-green-500/20 flex items-center gap-2">
+                      <div className="flex gap-1">
+                        <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                      </div>
+                      <span className="text-gray-300 text-xs ml-2">terminal</span>
                     </div>
-                  </div>
-                  <div className="aspect-square bg-gradient-to-br from-pink-900/40 to-purple-900/60 rounded-xl overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="w-full h-full bg-gradient-to-br from-pink-600/20 to-purple-800/40 flex items-end justify-center p-6">
-                      <div className="w-12 h-16 bg-gradient-to-b from-pink-400/80 to-pink-600/90 rounded-t-full shadow-lg opacity-80"></div>
+                    
+                    {/* Terminal Content */}
+                    <div className="p-4 space-y-2 text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="text-green-400">user@phoenix:~$</span>
+                        <span className="text-gray-300">npm install @phoenix/ai-editor</span>
+                      </div>
+                      <div className="text-gray-400 text-xs">✓ Package installed successfully</div>
+                      
+                      <div className="flex items-center gap-2 mt-3">
+                        <span className="text-green-400">user@phoenix:~$</span>
+                        <span className="text-gray-300">phoenix init --template=react</span>
+                      </div>
+                      <div className="text-gray-400 text-xs">🚀 Creating new Phoenix project...</div>
+                      
+                      <div className="flex items-center gap-2 mt-3">
+                        <span className="text-green-400">user@phoenix:~$</span>
+                        <span className="text-gray-300">phoenix generate --ai-enabled</span>
+                      </div>
+                      <div className="text-gray-400 text-xs">✨ AI features enabled</div>
+                      
+                      <div className="flex items-center gap-2 mt-3">
+                        <span className="text-green-400">user@phoenix:~$</span>
+                        <span className="text-gray-300">phoenix serve</span>
+                        <div className="w-0.5 h-4 bg-green-400 animate-pulse ml-1"></div>
+                      </div>
+                      <div className="text-purple-400 text-xs">🌟 Server running on localhost:3000</div>
                     </div>
                   </div>
                 </div>
