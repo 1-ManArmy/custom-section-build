@@ -1,5 +1,7 @@
+import { HeroSection } from "@/components/HeroSection";
+
 function App() {
-    return <div></div>
+    return <HeroSection />
 }
 
 export default App
