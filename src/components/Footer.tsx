@@ -21,7 +21,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-purple-600 bg-clip-text text-transparent">Phoenix AI</h3>
+            <h3 className="text-xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-purple-600 bg-clip-text text-transparent">AI Digital Friend</h3>
             <p className="text-sm text-gray-400 leading-relaxed">
               Code with style using terminal design. Build and design with animated command sequences.
             </p>
@@ -121,9 +121,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0\n">
+        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center space-x-2 text-sm text-gray-400">
-            <span>© 2024 Phoenix AI. All rights reserved.</span>
+            <span>© 2024 AI Digital Friend. All rights reserved.</span>
           </div>
           <div className="flex items-center space-x-2 text-sm text-gray-400">
             <span>Made with</span>
