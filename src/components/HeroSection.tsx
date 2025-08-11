@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { TerminalDisplay } from "@/components/TerminalDisplay";
 import { ChatSection } from "@/components/ChatSection";
 import { CardSection } from "@/components/CardSection";
+import { BannerSection } from "@/components/BannerSection";
 import { Sparkles } from "@phosphor-icons/react";
 
 export function HeroSection() {
@@ -53,6 +54,9 @@ export function HeroSection() {
       
       {/* Card Section */}
       <CardSection />
+      
+      {/* Banner Section */}
+      <BannerSection />
       
       {/* Chat Section */}
       <ChatSection />
