@@ -1,27 +1,39 @@
 import { useState, useEffect } from "react";
 import { Terminal } from "@phosphor-icons/react";
 
-  const [charIndex, setCharIndex] =
+export function TerminalDisplay() {
+  const [commandIndex, setCommandIndex] = useState(0);
+  const [currentCommand, setCurrentCommand] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
+  const [currentResponse, setCurrentResponse] = useState<string[]>([]);
 
+  const commands = [
     "npm install design-system",
-    "npm run build",
+    "npm run build", 
     "git push origin main"
+  ];
 
-    ["✓ design-syste
-    "npm install design-system",
-    ["Enumerating objects: 5, done.", "To o
-    "npm run build",
+  const responses = [
+    ["✓ design-system@2.1.0 installed", "✓ Added 247 packages"],
+    ["✓ Build completed successfully", "✓ Output: dist/"],
+    ["Enumerating objects: 5, done.", "To origin/main"]
+  ];
+
+  // Command cycle effect
   useEffect(() => {
-    "git push origin main"
-    
-
+    if (charIndex >= commands[commandIndex].length) {
+      setCurrentResponse(responses[commandIndex]);
       
-    } else {
       const timer = setTimeout(() => {
+        setCommandIndex((prev) => (prev + 1) % commands.length);
         setCharIndex(0);
+        setCurrentCommand("");
+        setCurrentResponse([]);
       }, 2000);
       return () => clearTimeout(timer);
-  },
+    }
+  }, [charIndex, commandIndex, commands]);
 
   // Typing animation effect
   useEffect(() => {
@@ -34,102 +46,77 @@ import { Terminal } from "@phosphor-icons/react";
       }, 80 + Math.random() * 40); // Variable typing speed
       
       return () => clearTimeout(timer);
-    } else {
-      // Command finished, wait then move to next
-      const timer = setTimeout(() => {
-        setCommandIndex((prev) => (prev + 1) % commands.length);
-        setCharIndex(0);
-        setCurrentCommand("");
-      }, 2000);
-      
-      return () => clearTimeout(timer);
     }
   }, [charIndex, commandIndex, commands]);
 
   // Cursor blinking effect
   useEffect(() => {
-              {showCursor && '█'}
-          </span>
-
+    const interval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 530);
     
-            {currentResponse.map((line
-         
+    return () => clearInterval(interval);
+  }, []);
 
-            ))}
-        )}
-
-          
-            <span className="text-green-400">Connected</span>
-          <div className="fle
-            <div className="w-1 h-1 bg-orange-400 rounded-full animate-ping"></div>
-          <div className="text-gray-500">
-          </div>
+  return (
+    <div className="bg-card rounded-2xl border border-border shadow-2xl overflow-hidden">
+      {/* Terminal Header */}
+      <div className="flex items-center justify-between px-6 py-4 bg-muted/50 border-b border-border">
+        <div className="flex items-center gap-3">
+          <Terminal className="text-muted-foreground" size={20} />
+          <span className="text-sm font-medium text-card-foreground">Terminal</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+        </div>
       </div>
-  );
 
+      {/* Terminal Content */}
+      <div className="p-6 space-y-4 font-mono">
+        {/* Animated Typing SVG */}
+        <div className="flex justify-center mb-6">
+          <img 
+            src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=2000&pause=1000&color=FF0000&center=true&vCenter=true&width=600&lines=AI+Digital+Friend" 
+            alt="Typing SVG: AI Digital Friend" 
+            className="max-w-full h-auto"
+          />
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              {showCursor && '█'}
-
+        {/* Command Input */}
+        <div className="flex items-center gap-2">
+          <span className="text-green-400">$</span>
+          <span className="text-card-foreground">
+            {currentCommand}
+            {showCursor && '█'}
           </span>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
+        {/* Command Response */}
+        {currentResponse.length > 0 && (
+          <div className="space-y-1 text-muted-foreground">
+            {currentResponse.map((line, index) => (
+              <div key={index} className="animate-fadeIn">
+                {line}
+              </div>
             ))}
-
+          </div>
         )}
 
-
-
-
-
+        {/* Status Indicator */}
+        <div className="flex items-center justify-between pt-4 border-t border-border/50">
+          <div className="flex items-center gap-2 text-sm">
             <span className="text-green-400">Connected</span>
-
-
-
-            <div className="w-1 h-1 bg-orange-400 rounded-full animate-ping"></div>
-
-          <div className="text-gray-500">
-
           </div>
-
+          <div className="flex items-center gap-2">
+            <div className="w-1 h-1 bg-orange-400 rounded-full animate-ping"></div>
+            <div className="text-gray-500 text-xs">
+              Live
+            </div>
+          </div>
+        </div>
       </div>
-
+    </div>
   );
+}
