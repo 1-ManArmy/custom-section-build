@@ -60,13 +60,55 @@ export function HeroSection() {
                 {/* Text input area */}
                 <div className="bg-black/60 rounded-xl p-4 border border-white/10 min-h-[80px]">
                   <div className="flex items-start gap-2">
-                    <span className="text-white text-sm">make the</span>
                     <div className="w-0.5 h-5 bg-white animate-pulse"></div>
                   </div>
                 </div>
 
-                {/* Options and Generate */}
-                <div className="flex items-center justify-between pt-2">
+                {/* Terminal Interface - Larger size */}
+                <div className="pt-4">
+                  <div className="bg-black/90 border border-green-500/30 rounded-lg overflow-hidden font-mono">
+                    {/* Terminal Header */}
+                    <div className="bg-gray-800/50 px-4 py-3 border-b border-green-500/20 flex items-center gap-2">
+                      <div className="flex gap-1">
+                        <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                      </div>
+                      <span className="text-gray-300 text-sm ml-2">terminal</span>
+                    </div>
+                    
+                    {/* Terminal Content - Larger */}
+                    <div className="p-6 space-y-3 text-sm min-h-[180px]">
+                      <div className="flex items-center gap-2">
+                        <span className="text-green-400">user@phoenix:~$</span>
+                        <span className="text-gray-300">npm install @phoenix/ai-editor</span>
+                      </div>
+                      <div className="text-gray-400 text-sm">✓ Package installed successfully</div>
+                      
+                      <div className="flex items-center gap-2 mt-4">
+                        <span className="text-green-400">user@phoenix:~$</span>
+                        <span className="text-gray-300">phoenix init --template=react</span>
+                      </div>
+                      <div className="text-gray-400 text-sm">🚀 Creating new Phoenix project...</div>
+                      
+                      <div className="flex items-center gap-2 mt-4">
+                        <span className="text-green-400">user@phoenix:~$</span>
+                        <span className="text-gray-300">phoenix generate --ai-enabled</span>
+                      </div>
+                      <div className="text-gray-400 text-sm">✨ AI features enabled</div>
+                      
+                      <div className="flex items-center gap-2 mt-4">
+                        <span className="text-green-400">user@phoenix:~$</span>
+                        <span className="text-gray-300">phoenix serve</span>
+                        <div className="w-0.5 h-5 bg-green-400 animate-pulse ml-1"></div>
+                      </div>
+                      <div className="text-purple-400 text-sm">🌟 Server running on localhost:3000</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Options and Generate - Moved below terminal */}
+                <div className="flex items-center justify-between pt-4">
                   <div className="flex items-center gap-2">
                     <Checkbox id="fixed-seed" className="border-white/30 data-[state=checked]:bg-purple-600" />
                     <label htmlFor="fixed-seed" className="text-sm text-white cursor-pointer">
@@ -77,49 +119,6 @@ export function HeroSection() {
                   <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-xl font-medium text-sm transition-all duration-200 shadow-lg">
                     Generate ✨ 24
                   </Button>
-                </div>
-
-                {/* Terminal Interface */}
-                <div className="pt-4">
-                  <div className="bg-black/90 border border-green-500/30 rounded-lg overflow-hidden font-mono">
-                    {/* Terminal Header */}
-                    <div className="bg-gray-800/50 px-4 py-2 border-b border-green-500/20 flex items-center gap-2">
-                      <div className="flex gap-1">
-                        <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                      </div>
-                      <span className="text-gray-300 text-xs ml-2">terminal</span>
-                    </div>
-                    
-                    {/* Terminal Content */}
-                    <div className="p-4 space-y-2 text-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="text-green-400">user@phoenix:~$</span>
-                        <span className="text-gray-300">npm install @phoenix/ai-editor</span>
-                      </div>
-                      <div className="text-gray-400 text-xs">✓ Package installed successfully</div>
-                      
-                      <div className="flex items-center gap-2 mt-3">
-                        <span className="text-green-400">user@phoenix:~$</span>
-                        <span className="text-gray-300">phoenix init --template=react</span>
-                      </div>
-                      <div className="text-gray-400 text-xs">🚀 Creating new Phoenix project...</div>
-                      
-                      <div className="flex items-center gap-2 mt-3">
-                        <span className="text-green-400">user@phoenix:~$</span>
-                        <span className="text-gray-300">phoenix generate --ai-enabled</span>
-                      </div>
-                      <div className="text-gray-400 text-xs">✨ AI features enabled</div>
-                      
-                      <div className="flex items-center gap-2 mt-3">
-                        <span className="text-green-400">user@phoenix:~$</span>
-                        <span className="text-gray-300">phoenix serve</span>
-                        <div className="w-0.5 h-4 bg-green-400 animate-pulse ml-1"></div>
-                      </div>
-                      <div className="text-purple-400 text-xs">🌟 Server running on localhost:3000</div>
-                    </div>
-                  </div>
                 </div>
               </div>
 
