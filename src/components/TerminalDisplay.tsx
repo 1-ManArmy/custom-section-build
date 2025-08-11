@@ -59,24 +59,24 @@ export function TerminalDisplay() {
   }, []);
 
   return (
-    <div className="bg-card rounded-2xl border border-border shadow-2xl overflow-hidden">
+    <div className="bg-card rounded-2xl border border-border shadow-2xl overflow-hidden w-full min-h-[600px]">
       {/* Terminal Header */}
-      <div className="flex items-center justify-between px-6 py-4 bg-muted/50 border-b border-border">
-        <div className="flex items-center gap-3">
-          <Terminal className="text-muted-foreground" size={20} />
-          <span className="text-sm font-medium text-card-foreground">Terminal</span>
+      <div className="flex items-center justify-between px-8 py-6 bg-muted/50 border-b border-border">
+        <div className="flex items-center gap-4">
+          <Terminal className="text-muted-foreground" size={24} />
+          <span className="text-base font-medium text-card-foreground">Terminal</span>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+        <div className="flex items-center gap-3">
+          <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+          <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+          <div className="w-4 h-4 bg-green-500 rounded-full"></div>
         </div>
       </div>
 
       {/* Terminal Content */}
-      <div className="p-6 space-y-4 font-mono">
+      <div className="p-8 space-y-6 font-mono min-h-[500px]">
         {/* Animated Typing SVG */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-8">
           <img 
             src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=2000&pause=1000&color=FF0000&center=true&vCenter=true&width=600&lines=AI+Digital+Friend" 
             alt="Typing SVG: AI Digital Friend" 
@@ -85,7 +85,7 @@ export function TerminalDisplay() {
         </div>
 
         {/* Command Input */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3 text-lg">
           <span className="text-green-400">$</span>
           <span className="text-card-foreground">
             {currentCommand}
@@ -95,7 +95,7 @@ export function TerminalDisplay() {
 
         {/* Command Response */}
         {currentResponse.length > 0 && (
-          <div className="space-y-1 text-muted-foreground">
+          <div className="space-y-2 text-muted-foreground text-base">
             {currentResponse.map((line, index) => (
               <div key={index} className="animate-fadeIn">
                 {line}
@@ -105,13 +105,13 @@ export function TerminalDisplay() {
         )}
 
         {/* Status Indicator */}
-        <div className="flex items-center justify-between pt-4 border-t border-border/50">
-          <div className="flex items-center gap-2 text-sm">
+        <div className="flex items-center justify-between pt-6 border-t border-border/50">
+          <div className="flex items-center gap-3 text-base">
             <span className="text-green-400">Connected</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-1 h-1 bg-orange-400 rounded-full animate-ping"></div>
-            <div className="text-gray-500 text-xs">
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-orange-400 rounded-full animate-ping"></div>
+            <div className="text-gray-500 text-sm">
               Live
             </div>
           </div>

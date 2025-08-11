@@ -31,9 +31,9 @@ export function HeroSection() {
         </div>
 
         {/* Right Content - Terminal Interface */}
-        <div className="relative">
+        <div className="relative w-full">
           {/* Main gradient container */}
-          <div className="relative bg-gradient-to-br from-green-500/10 via-blue-600/20 to-purple-600/10 rounded-3xl p-8">
+          <div className="relative bg-gradient-to-br from-green-500/10 via-blue-600/20 to-purple-600/10 rounded-3xl p-6">
             <TerminalDisplay />
             
             {/* Floating elements */}
