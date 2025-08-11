@@ -69,7 +69,7 @@ export function PartnersSection() {
               </div>
               
               {/* Animated border effect */}
-              <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-green-400 via-blue-400 to-purple-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-gradient-spin"></div>
+              <div className="absolute inset-0 border-2 border-transparent from-green-400 via-blue-400 to-purple-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-gradient-spin bg-slate-700"></div>
             </Card>
           ))}
         </div>
