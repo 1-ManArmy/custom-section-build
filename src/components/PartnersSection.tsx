@@ -56,7 +56,7 @@ export function PartnersSection() {
           {partners.map((partner, index) => (
             <Card 
               key={index}
-              className="relative bg-card/40 backdrop-blur-sm border-4 border-accent/60 hover:border-accent transition-all duration-300 hover:scale-105 group overflow-hidden shadow-lg hover:shadow-xl"
+              className="relative bg-card/40 backdrop-blur-sm border border-accent/60 hover:border-accent transition-all duration-300 hover:scale-105 group overflow-hidden shadow-lg hover:shadow-xl"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-blue-500/15 to-purple-500/10 opacity-70"></div>
               <div className="relative p-8 flex flex-col items-center justify-center space-y-4 h-32">
@@ -69,7 +69,7 @@ export function PartnersSection() {
               </div>
               
               {/* Animated border effect */}
-              <div className="absolute inset-0 border-4 border-transparent bg-gradient-to-r from-green-400 via-blue-400 to-purple-600 rounded-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300 animate-gradient-spin"></div>
+              <div className="absolute inset-0 border border-transparent bg-gradient-to-r from-green-400 via-blue-400 to-purple-600 rounded-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300 animate-gradient-spin"></div>
             </Card>
           ))}
         </div>

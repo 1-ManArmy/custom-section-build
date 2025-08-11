@@ -59,10 +59,10 @@ export function TerminalDisplay() {
   }, []);
 
   return (
-    <div className="bg-card rounded-2xl border-4 border-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 p-1 shadow-2xl overflow-hidden w-full min-h-[600px] animate-gradient-spin">
+    <div className="bg-card rounded-2xl border border-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 p-0.5 shadow-2xl overflow-hidden w-full min-h-[600px] animate-gradient-spin">
       <div className="bg-card rounded-xl h-full">
         {/* Terminal Header */}
-        <div className="flex items-center justify-between px-8 py-6 bg-muted/50 border-b-4 border-purple-500/50">
+        <div className="flex items-center justify-between px-8 py-6 bg-muted/50 border-b border-purple-500/50">
         <div className="flex items-center gap-4">
           <Terminal className="text-muted-foreground" size={24} />
           <span className="text-base font-medium text-card-foreground">Terminal</span>
@@ -106,7 +106,7 @@ export function TerminalDisplay() {
         )}
 
         {/* Status Indicator */}
-        <div className="flex items-center justify-between pt-6 border-t-4 border-gradient-to-r from-cyan-400 to-purple-500">
+        <div className="flex items-center justify-between pt-6 border-t border-gradient-to-r from-cyan-400 to-purple-500">
           <div className="flex items-center gap-3 text-base">
             <span className="text-green-400">Connected</span>
           </div>
