@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Sparkles, X, Settings } from "@phosphor-icons/react";
 
@@ -34,71 +32,77 @@ export function HeroSection() {
 
         {/* Right Content - AI Interface Mockup */}
         <div className="relative">
-          {/* Main gradient container */}
-          <div className="relative bg-gradient-to-br from-purple-500/20 via-purple-600/30 to-blue-600/20 rounded-3xl p-8">
-            {/* AI Editor Interface */}
-            <Card className="bg-black/40 backdrop-blur-sm border-white/10 rounded-2xl p-6 space-y-4">
-              {/* Header */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-purple-400" />
-                  <span className="text-white font-medium">Edit with AI</span>
+          {/* Main purple gradient frame */}
+          <div className="relative bg-gradient-to-br from-purple-500 via-purple-600 to-blue-500 rounded-[2rem] p-1">
+            <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-[1.8rem] p-8">
+              
+              {/* AI Editor Interface */}
+              <div className="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-4 space-y-4">
+                {/* Header */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-purple-400" />
+                    <span className="text-white font-medium text-sm">Edit with AI</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-gray-400">minimalist gradi</span>
+                    <Button variant="ghost" size="sm" className="h-6 w-6 p-0 text-gray-400 hover:text-white">
+                      <X className="w-3 h-3" />
+                    </Button>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-400">minimalist gradi</span>
-                  <Button variant="ghost" size="sm" className="h-6 w-6 p-0 text-gray-400 hover:text-white">
-                    <X className="w-4 h-4" />
+
+                {/* Examples text */}
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  Examples: "change the coat to red" or "add a blue hat" or "make it vintage" or "add dramatic lighting".
+                </p>
+
+                {/* Text input area */}
+                <div className="bg-black/60 rounded-xl p-4 border border-white/10 min-h-[80px]">
+                  <div className="flex items-start gap-2">
+                    <span className="text-white text-sm">make the</span>
+                    <div className="w-0.5 h-5 bg-white animate-pulse"></div>
+                  </div>
+                </div>
+
+                {/* Options and Generate */}
+                <div className="flex items-center justify-between pt-2">
+                  <div className="flex items-center gap-2">
+                    <Checkbox id="fixed-seed" className="border-white/30 data-[state=checked]:bg-purple-600" />
+                    <label htmlFor="fixed-seed" className="text-sm text-white cursor-pointer">
+                      Use fixed seed
+                    </label>
+                  </div>
+                  
+                  <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-xl font-medium text-sm transition-all duration-200 shadow-lg">
+                    Generate ✨ 24
                   </Button>
                 </div>
-              </div>
 
-              {/* Examples text */}
-              <p className="text-xs text-gray-400">
-                Examples: "change the coat to red" or "add a blue hat" or "make it vintage" or "add dramatic lighting".
-              </p>
-
-              {/* Text input area */}
-              <div className="bg-black/60 rounded-lg p-3 border border-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="text-white text-sm">make the</span>
-                  <div className="w-1 h-4 bg-white animate-pulse"></div>
+                {/* Image comparison */}
+                <div className="grid grid-cols-2 gap-3 pt-4">
+                  <div className="aspect-square bg-gradient-to-br from-pink-900/40 to-purple-900/60 rounded-xl overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="w-full h-full bg-gradient-to-br from-pink-600/20 to-purple-800/40 flex items-end justify-center p-6">
+                      <div className="w-12 h-16 bg-gradient-to-b from-pink-400/80 to-pink-600/90 rounded-t-full shadow-lg opacity-80"></div>
+                    </div>
+                  </div>
+                  <div className="aspect-square bg-gradient-to-br from-pink-900/40 to-purple-900/60 rounded-xl overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="w-full h-full bg-gradient-to-br from-pink-600/20 to-purple-800/40 flex items-end justify-center p-6">
+                      <div className="w-12 h-16 bg-gradient-to-b from-pink-400/80 to-pink-600/90 rounded-t-full shadow-lg opacity-80"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Options */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Checkbox id="fixed-seed" className="border-white/30" />
-                  <label htmlFor="fixed-seed" className="text-sm text-white">
-                    Use fixed seed
-                  </label>
-                </div>
-                
-                <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200">
-                  Generate ✨ 24
+              {/* Settings icon */}
+              <div className="absolute top-4 right-4">
+                <Button variant="ghost" size="sm" className="text-white/60 hover:text-white bg-white/5 hover:bg-white/10 rounded-full h-8 w-8 p-0">
+                  <Settings className="w-4 h-4" />
                 </Button>
               </div>
-
-              {/* Image comparison */}
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                <div className="aspect-square bg-gradient-to-br from-pink-900/50 to-purple-900/50 rounded-lg overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-pink-600/30 to-purple-800/50 flex items-end justify-center p-4">
-                    <div className="w-16 h-20 bg-gradient-to-b from-pink-400/60 to-pink-600/80 rounded-t-full blur-sm"></div>
-                  </div>
-                </div>
-                <div className="aspect-square bg-gradient-to-br from-pink-900/50 to-purple-900/50 rounded-lg overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-pink-600/30 to-purple-800/50 flex items-end justify-center p-4">
-                    <div className="w-16 h-20 bg-gradient-to-b from-pink-400/60 to-pink-600/80 rounded-t-full blur-sm"></div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Settings button */}
-            <div className="absolute top-4 right-4">
-              <Button variant="ghost" size="sm" className="text-white/70 hover:text-white">
-                <Settings className="w-5 h-5" />
-              </Button>
+              
             </div>
           </div>
         </div>
