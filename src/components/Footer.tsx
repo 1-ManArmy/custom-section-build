@@ -3,7 +3,7 @@ import { Github, Twitter, Linkedin, Heart } from "@phosphor-icons/react";
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-12 bg-purple-500">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
