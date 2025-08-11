@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Sparkles, X, Settings, Terminal } from "@phosphor-icons/react";
+import { TerminalDisplay } from "@/components/TerminalDisplay";
+import { Sparkles } from "@phosphor-icons/react";
 
 export function HeroSection() {
   return (
@@ -12,15 +10,15 @@ export function HeroSection() {
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-              Rapidly iterate using{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-                Edit with AI
+              Code with style using{" "}
+              <span className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-600 bg-clip-text text-transparent">
+                Terminal Design
               </span>
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-              Edit with short, everyday phrases using our new Edit with AI feature, 
-              to achieve perfect image generations, faster.
+              Build and design with terminal commands. Watch as your code comes to life 
+              through animated command sequences and real-time responses.
             </p>
           </div>
           
@@ -32,81 +30,18 @@ export function HeroSection() {
           </Button>
         </div>
 
-        {/* Right Content - AI Interface Mockup */}
+        {/* Right Content - Terminal Interface */}
         <div className="relative">
           {/* Main gradient container */}
-          <div className="relative bg-gradient-to-br from-purple-500/20 via-purple-600/30 to-blue-600/20 rounded-3xl p-8">
-            {/* AI Editor Interface */}
-            <Card className="bg-black/40 backdrop-blur-sm border-white/10 rounded-2xl p-6 space-y-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-purple-400" />
-                  <span className="text-white font-medium">Edit with AI</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-400">minimalist gradient</span>
-                  <Button variant="ghost" size="sm" className="h-6 w-6 p-0 text-gray-400 hover:text-white">
-                    <X className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-
-              {/* Options */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Checkbox id="fixed-seed" className="border-white/30" />
-                  <label htmlFor="fixed-seed" className="text-sm text-white">
-                    Use fixed seed
-                  </label>
-                </div>
-                
-                <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200">
-                  Generate ✨ 24
-                </Button>
-              </div>
-
-              {/* Image comparison cubes */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square bg-gradient-to-br from-pink-900/50 to-purple-900/50 rounded-lg overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-pink-600/30 to-purple-800/50 flex items-end justify-center p-4">
-                    <div className="w-16 h-20 bg-gradient-to-b from-pink-400/60 to-pink-600/80 rounded-t-full blur-sm"></div>
-                  </div>
-                </div>
-
-                <div className="aspect-square bg-gradient-to-br from-pink-900/50 to-purple-900/50 rounded-lg overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-pink-600/30 to-purple-800/50 flex items-end justify-center p-4">
-                    <div className="w-16 h-20 bg-gradient-to-b from-pink-400/60 to-pink-600/80 rounded-t-full blur-sm"></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Terminal view */}
-              <div className="bg-black/80 rounded-lg border border-white/10 overflow-hidden">
-                <div className="bg-gray-800/50 px-4 py-2 border-b border-white/10 flex items-center gap-2">
-                  <Terminal className="w-4 h-4 text-green-400" />
-                  <span className="text-xs text-gray-300">Terminal</span>
-                </div>
-                <div className="p-4 space-y-2 h-32">
-                  <div className="flex items-center gap-2">
-                    <span className="text-green-400 text-sm">$</span>
-                    <span className="text-white text-sm">npm run dev</span>
-                  </div>
-                  <div className="text-gray-400 text-xs">
-                    <div>Local: http://localhost:3000</div>
-                    <div>Network: http://192.168.1.100:3000</div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-green-400 text-sm">$</span>
-                    <div className="w-1 h-4 bg-white animate-pulse"></div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            <div className="absolute top-4 right-4">
-              <Button variant="ghost" size="sm" className="text-white/70 hover:text-white">
-                <Settings className="w-5 h-5" />
-              </Button>
+          <div className="relative bg-gradient-to-br from-green-500/10 via-blue-600/20 to-purple-600/10 rounded-3xl p-8">
+            <TerminalDisplay />
+            
+            {/* Floating elements */}
+            <div className="absolute -top-2 -right-2">
+              <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
+            </div>
+            <div className="absolute top-8 -left-2">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
             </div>
           </div>
         </div>
