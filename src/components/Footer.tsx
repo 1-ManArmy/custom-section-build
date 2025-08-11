@@ -132,7 +132,7 @@ export function Footer() {
           <div className="flex items-center space-x-2 text-sm text-gray-400">
             <span>Made with</span>
             <Heart size={16} className="text-red-500" weight="fill" />
-            <span>by the Phoenix AI team</span>
+            <span>by GitHub Developer</span>
           </div>
         </div>
       </div>
