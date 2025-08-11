@@ -72,7 +72,6 @@ export function PricingSection() {
     <section className="py-24 px-6 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5"></div>
-      
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
@@ -162,9 +161,7 @@ export function PricingSection() {
 
         {/* Additional info */}
         <div className="text-center mt-12 space-y-4">
-          <p className="text-muted-foreground">
-            All plans include 7-day free trial • Cancel anytime • No hidden fees
-          </p>
+          <p className="text-muted-foreground">All plans include 7-day free trial • Cancel anytime • No hidden fees</p>
           <div className="flex justify-center gap-4 text-sm text-muted-foreground">
             <span>💳 Secure payment</span>
             <span>🔒 SSL encrypted</span>
