@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-    <div className="min-h-screen bg-background flex items-cent
+import { Sparkles, X, Settings, Terminal } from "@phosphor-icons/react";
 
-          <div className="space
-          
+export function HeroSection() {
+  return (
     <div className="min-h-screen bg-background flex items-center justify-center p-6">
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
@@ -14,54 +14,40 @@ import { Checkbox } from "@/components/ui/checkbox";
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
               Rapidly iterate using{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-        </div>
+                Edit with AI
               </span>
-          {/* Mai
+            </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
               Edit with short, everyday phrases using our new Edit with AI feature, 
               to achieve perfect image generations, faster.
             </p>
-                
+          </div>
           
-              </di
+          <Button 
             size="lg" 
             className="px-8 py-6 text-lg font-medium bg-secondary hover:bg-secondary/80 text-secondary-foreground rounded-full transition-all duration-200 hover:scale-105"
           >
-              <div clas
+            Get Started
           </Button>
-              
+        </div>
 
         {/* Right Content - AI Interface Mockup */}
         <div className="relative">
           {/* Main gradient container */}
           <div className="relative bg-gradient-to-br from-purple-500/20 via-purple-600/30 to-blue-600/20 rounded-3xl p-8">
             {/* AI Editor Interface */}
-            <Card className="bg-black/40 backdrop-blur-sm border-white/10 rounded-2xl p-6 space-y-4">
-
+            <Card className="bg-black/40 backdrop-blur-sm border-white/10 rounded-2xl p-6 space-y-6">
               <div className="flex items-center justify-between">
-                  <div className="w-full h-full bg-gradie
+                <div className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-purple-400" />
                   <span className="text-white font-medium">Edit with AI</span>
-                    <d
+                </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-400">minimalist gradi</span>
+                  <span className="text-xs text-gray-400">minimalist gradient</span>
                   <Button variant="ghost" size="sm" className="h-6 w-6 p-0 text-gray-400 hover:text-white">
                     <X className="w-4 h-4" />
                   </Button>
-            <div class
-              </div>
-
-              {/* Examples text */}
-              <p className="text-xs text-gray-400">
-
-              </p>
-
-              {/* Text input area */}
-              <div className="bg-black/60 rounded-lg p-3 border border-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="text-white text-sm">make the</span>
-                  <div className="w-1 h-4 bg-white animate-pulse"></div>
                 </div>
               </div>
 
@@ -70,21 +56,22 @@ import { Checkbox } from "@/components/ui/checkbox";
                 <div className="flex items-center gap-2">
                   <Checkbox id="fixed-seed" className="border-white/30" />
                   <label htmlFor="fixed-seed" className="text-sm text-white">
-
+                    Use fixed seed
                   </label>
-
+                </div>
                 
                 <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200">
                   Generate ✨ 24
-
+                </Button>
               </div>
 
-              {/* Image comparison */}
-
+              {/* Image comparison cubes */}
+              <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-square bg-gradient-to-br from-pink-900/50 to-purple-900/50 rounded-lg overflow-hidden">
                   <div className="w-full h-full bg-gradient-to-br from-pink-600/30 to-purple-800/50 flex items-end justify-center p-4">
                     <div className="w-16 h-20 bg-gradient-to-b from-pink-400/60 to-pink-600/80 rounded-t-full blur-sm"></div>
-
+                  </div>
+                </div>
 
                 <div className="aspect-square bg-gradient-to-br from-pink-900/50 to-purple-900/50 rounded-lg overflow-hidden">
                   <div className="w-full h-full bg-gradient-to-br from-pink-600/30 to-purple-800/50 flex items-end justify-center p-4">
@@ -93,16 +80,37 @@ import { Checkbox } from "@/components/ui/checkbox";
                 </div>
               </div>
 
-
+              {/* Terminal view */}
+              <div className="bg-black/80 rounded-lg border border-white/10 overflow-hidden">
+                <div className="bg-gray-800/50 px-4 py-2 border-b border-white/10 flex items-center gap-2">
+                  <Terminal className="w-4 h-4 text-green-400" />
+                  <span className="text-xs text-gray-300">Terminal</span>
+                </div>
+                <div className="p-4 space-y-2 h-32">
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-400 text-sm">$</span>
+                    <span className="text-white text-sm">npm run dev</span>
+                  </div>
+                  <div className="text-gray-400 text-xs">
+                    <div>Local: http://localhost:3000</div>
+                    <div>Network: http://192.168.1.100:3000</div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-400 text-sm">$</span>
+                    <div className="w-1 h-4 bg-white animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            </Card>
 
             <div className="absolute top-4 right-4">
               <Button variant="ghost" size="sm" className="text-white/70 hover:text-white">
                 <Settings className="w-5 h-5" />
-
+              </Button>
             </div>
-
+          </div>
         </div>
-
+      </div>
     </div>
   );
 }
