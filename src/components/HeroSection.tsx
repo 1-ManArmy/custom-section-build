@@ -107,15 +107,7 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                {/* Options - Fixed seed checked by default */}
-                <div className="flex items-center pt-4">
-                  <div className="flex items-center gap-2">
-                    <Checkbox id="fixed-seed" defaultChecked className="border-white/30 data-[state=checked]:bg-purple-600" />
-                    <label htmlFor="fixed-seed" className="text-sm text-white cursor-pointer">
-                      Use fixed seed
-                    </label>
-                  </div>
-                </div>
+
               </div>
 
               {/* Settings icon */}
