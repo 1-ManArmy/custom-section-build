@@ -107,18 +107,14 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                {/* Options and Generate - Moved below terminal */}
-                <div className="flex items-center justify-between pt-4">
+                {/* Options - Fixed seed checked by default */}
+                <div className="flex items-center pt-4">
                   <div className="flex items-center gap-2">
-                    <Checkbox id="fixed-seed" className="border-white/30 data-[state=checked]:bg-purple-600" />
+                    <Checkbox id="fixed-seed" defaultChecked className="border-white/30 data-[state=checked]:bg-purple-600" />
                     <label htmlFor="fixed-seed" className="text-sm text-white cursor-pointer">
                       Use fixed seed
                     </label>
                   </div>
-                  
-                  <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-xl font-medium text-sm transition-all duration-200 shadow-lg">
-                    Generate ✨ 24
-                  </Button>
                 </div>
               </div>
 
