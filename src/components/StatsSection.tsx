@@ -1,4 +1,4 @@
-import { Users, Code, Rocket, Zap } from "@phosphor-icons/react";
+import { Users, Code, Rocket, Lightning } from "@phosphor-icons/react";
 
 export function StatsSection() {
   const stats = [
@@ -21,7 +21,7 @@ export function StatsSection() {
       description: "Comprehensive suite of AI solutions"
     },
     {
-      icon: Zap,
+      icon: Lightning,
       value: "24/7",
       label: "Support",
       description: "Round-the-clock assistance"

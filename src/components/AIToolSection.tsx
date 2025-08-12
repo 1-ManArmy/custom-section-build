@@ -1,4 +1,4 @@
-import { Sparkle, Brain, Zap, Robot } from "@phosphor-icons/react";
+import { Sparkle, Brain, Lightning, Robot } from "@phosphor-icons/react";
 import { useState, useEffect } from "react";
 
 export const AIToolSection = () => {
@@ -89,7 +89,7 @@ export const AIToolSection = () => {
                                                 <Robot size={40} className="text-white" />
                                             </div>
                                             <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center transform rotate-45 animate-pulse" style={{ animationDelay: '1s' }}>
-                                                <Zap size={32} className="text-white" />
+                                                <Lightning size={32} className="text-white" />
                                             </div>
                                         </div>
                                         

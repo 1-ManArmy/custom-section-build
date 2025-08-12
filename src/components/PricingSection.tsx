@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Crown, Star, Zap } from "@phosphor-icons/react";
+import { Check, Crown, Star, Lightning } from "@phosphor-icons/react";
 
 export function PricingSection() {
   const plans = [
@@ -8,7 +8,7 @@ export function PricingSection() {
       name: "Weekly",
       price: "$3",
       period: "1 week",
-      icon: <Zap size={24} className="text-green-400" />,
+      icon: <Lightning size={24} className="text-green-400" />,
       gradient: "from-green-400/20 via-emerald-400/30 to-teal-500/20",
       borderGradient: "from-green-400 via-emerald-400 to-teal-500",
       features: [

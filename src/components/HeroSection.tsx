@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Terminal, Sparkles } from "@phosphor-icons/react";
+import { Terminal, Sparkle } from "@phosphor-icons/react";
 
 export function HeroSection() {
   return (
@@ -9,7 +9,7 @@ export function HeroSection() {
         <div className="space-y-8 relative z-10">
           <div className="space-y-6">
             <div className="flex items-center space-x-2 mb-4">
-              <Sparkles size={24} className="text-purple-400" />
+              <Sparkle size={24} className="text-purple-400" />
               <span className="text-purple-400 font-medium">AI-Powered Terminal</span>
             </div>
             

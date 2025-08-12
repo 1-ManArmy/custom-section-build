@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Heart, Globe, Mail, Phone } from "@phosphor-icons/react";
+import { GithubLogo, TwitterLogo, LinkedinLogo, Heart, Globe, EnvelopeSimple, Phone } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/config/site";
 
@@ -64,7 +64,7 @@ export function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
-                <Mail size={18} className="text-purple-400" />
+                <EnvelopeSimple size={18} className="text-purple-400" />
                 <span>contact@{siteConfig.domain}</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
@@ -80,13 +80,13 @@ export function Footer() {
             {/* Social Links */}
             <div className="flex space-x-4">
               <a href={siteConfig.social.github} className="p-3 bg-gray-800/50 hover:bg-purple-600/20 rounded-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group">
-                <Github size={20} className="text-gray-400 group-hover:text-purple-400 transition-colors" />
+                <GithubLogo size={20} className="text-gray-400 group-hover:text-purple-400 transition-colors" />
               </a>
               <a href={siteConfig.social.twitter} className="p-3 bg-gray-800/50 hover:bg-blue-600/20 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group">
-                <Twitter size={20} className="text-gray-400 group-hover:text-blue-400 transition-colors" />
+                <TwitterLogo size={20} className="text-gray-400 group-hover:text-blue-400 transition-colors" />
               </a>
               <a href={siteConfig.social.linkedin} className="p-3 bg-gray-800/50 hover:bg-blue-700/20 rounded-xl border border-gray-700/50 hover:border-blue-600/50 transition-all duration-300 group">
-                <Linkedin size={20} className="text-gray-400 group-hover:text-blue-500 transition-colors" />
+                <LinkedinLogo size={20} className="text-gray-400 group-hover:text-blue-500 transition-colors" />
               </a>
             </div>
           </div>

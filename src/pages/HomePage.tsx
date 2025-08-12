@@ -1,6 +1,6 @@
 import { HeroSection } from "@/components/HeroSection";
 import { AIToolSection } from "@/components/AIToolSection";
-import { ChatSection } from "@/components/ChatSection";
+import { DemoChatSection } from "@/components/DemoChatSection";
 import { TerminalDisplay } from "@/components/TerminalDisplay";
 import { StatsSection } from "@/components/StatsSection";
 import { BannerSection } from "@/components/BannerSection";
@@ -14,7 +14,7 @@ export function HomePage() {
     <div>
       <HeroSection />
       <AIToolSection />
-      <ChatSection />
+      <DemoChatSection />
       <TerminalDisplay />
       <StatsSection />
       <BannerSection />

@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, X, CaretDown } from "@phosphor-icons/react";
+import { List, X, CaretDown } from "@phosphor-icons/react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -234,7 +234,7 @@ export function Header() {
             className="lg:hidden text-white/90 hover:text-white transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} /> : <List size={24} />}
           </button>
         </div>
 
