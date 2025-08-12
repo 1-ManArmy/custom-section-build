@@ -63,6 +63,15 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 :root {
   --background: oklch(0.05 0 0);
   --foreground: oklch(1 0 0);
