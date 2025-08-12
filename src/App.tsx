@@ -5,6 +5,7 @@ import { BannerSection } from "@/components/BannerSection";
 import { PricingSection } from "@/components/PricingSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { CardSection } from "@/components/CardSection";
+import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
                 <PricingSection />
                 <PartnersSection />
                 <CardSection />
+                <FAQSection />
                 <Footer />
             </div>
         </div>
