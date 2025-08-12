@@ -125,7 +125,7 @@ export function ChatSection() {
   };
 
   return (
-    <div className="min-h-screen bg-backgroundcvhabox nu takg fo srnn destion ch\n py-16 px-6\n">
+    <section className="py-16 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -291,6 +291,6 @@ export function ChatSection() {
           </Card>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
