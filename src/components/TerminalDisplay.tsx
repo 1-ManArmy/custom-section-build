@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Terminal } from "@phosphor-icons/react";
 
-export default function FAQPage() {
+export function TerminalDisplay() {
   const [commandIndex, setCommandIndex] = useState(0);
   const [currentCommand, setCurrentCommand] = useState("");
   const [charIndex, setCharIndex] = useState(0);
