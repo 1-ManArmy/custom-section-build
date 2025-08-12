@@ -127,7 +127,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section id="stats-section" className="relative py-20 px-4 overflow-hidden">
+    <section id="stats-section" className="relative py-32 px-4 overflow-hidden min-h-screen">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/50 via-black/80 to-purple-900/30"></div>
       
@@ -150,17 +150,17 @@ export function StatsSection() {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent mb-8">
             Transforming Education Globally
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how OneLast AI is revolutionizing education and empowering the next generation with cutting-edge AI technology
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            See how OneLast AI is revolutionizing education and empowering the next generation with cutting-edge AI technology across the globe
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             
@@ -197,8 +197,104 @@ export function StatsSection() {
           })}
         </div>
 
+        {/* Three Content Sections */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+          {/* Innovation Section */}
+          <div className="group p-8 rounded-3xl bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20 backdrop-blur-lg border border-blue-500/30 hover:border-blue-400/50 transition-all duration-500">
+            <div className="mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-4">
+                AI Innovation Hub
+              </h3>
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mb-6"></div>
+            </div>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              Our cutting-edge AI platform transforms traditional learning into an interactive, personalized experience. Students engage with intelligent tutors, automated assessments, and adaptive learning paths that evolve with their progress.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <span className="text-gray-400">Smart Learning Algorithms</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                <span className="text-gray-400">Real-time Performance Analytics</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <span className="text-gray-400">Personalized Content Delivery</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Global Impact Section */}
+          <div className="group p-8 rounded-3xl bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-rose-900/20 backdrop-blur-lg border border-purple-500/30 hover:border-purple-400/50 transition-all duration-500">
+            <div className="mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-300 bg-clip-text text-transparent mb-4">
+                Global Education Impact
+              </h3>
+              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-400 rounded-full mb-6"></div>
+            </div>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              Reaching students across 35+ countries, OneLast AI breaks down geographical barriers to quality education. Our platform democratizes access to advanced learning tools, ensuring every student has the opportunity to thrive in the digital age.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                <span className="text-gray-400">Multi-language Support</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+                <span className="text-gray-400">Cultural Adaptation</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                <span className="text-gray-400">Affordable Access Programs</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Future Ready Section */}
+          <div className="group p-8 rounded-3xl bg-gradient-to-br from-green-900/20 via-emerald-900/20 to-teal-900/20 backdrop-blur-lg border border-green-500/30 hover:border-green-400/50 transition-all duration-500">
+            <div className="mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent mb-4">
+                Future-Ready Skills
+              </h3>
+              <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-emerald-400 rounded-full mb-6"></div>
+            </div>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              Preparing students for tomorrow's challenges with essential 21st-century skills. Our curriculum emphasizes critical thinking, creativity, collaboration, and digital literacy - the foundations for success in an AI-driven world.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span className="text-gray-400">AI Literacy Programs</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                <span className="text-gray-400">Digital Citizenship</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span className="text-gray-400">Career Pathway Guidance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mission Statement */}
+        <div className="text-center mb-16">
+          <div className="max-w-5xl mx-auto p-12 rounded-3xl bg-gradient-to-br from-gray-900/40 via-purple-900/20 to-blue-900/40 backdrop-blur-lg border border-purple-500/20">
+            <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent mb-8">
+              Our Vision for Education
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Empowering Youth Through AI - We believe the future belongs to those who understand it. That's why we're introducing young minds to the world of Artificial Intelligence in a way that's creative, engaging, and practical. Our mission is to inspire curiosity, spark innovation, and provide the tools needed for a smarter, faster, and more adaptable tomorrow. With interactive modules, real-world projects, and fresh perspectives, we're building a generation ready to shape the future — not just live in it.
+            </p>
+          </div>
+        </div>
+
         {/* Additional Info */}
-        <div className="mt-16 text-center">
+        <div className="text-center">
           <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-purple-900/30 to-indigo-900/30 rounded-full border border-purple-500/30 backdrop-blur-lg">
             <div className="flex gap-2">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
