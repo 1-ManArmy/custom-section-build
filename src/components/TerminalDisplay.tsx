@@ -222,6 +222,15 @@ export function TerminalDisplay() {
               {/* United Mission Title */}
               <div className="mt-6 p-4 bg-gradient-to-r from-purple-900/20 to-indigo-900/20 rounded-lg border border-purple-500/20">
                 <h3 className="text-xl font-bold text-purple-300 text-center tracking-wide">UNITED MISSION</h3>
+                
+                {/* Animated Typing SVG */}
+                <div className="mt-4 flex justify-center">
+                  <img 
+                    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=2000&pause=1000&color=FF0000&color=A855F7&color=00FF00&center=true&vCenter=true&width=1000&lines=Empowering+Youth+Through+AI;We+believe+the+future+belongs+to+those+who+understand+it.+That's+why+we're+introducing+young+minds+to+the+world+of+Artificial+Intelligence+in+a+way+that's+creative,+engaging,+and+practical.;Our+mission+is+to+inspire+curiosity,+spark+innovation,+and+provide+the+tools+needed+for+a+smarter,+faster,+and+more+adaptable+tomorrow.;With+interactive+modules,+real-world+projects,+and+fresh+perspectives,+we're+building+a+generation+ready+to+shape+the+future+—+not+just+live+in+it." 
+                    alt="Empowering Youth Through AI Animation"
+                    className="max-w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
