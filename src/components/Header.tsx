@@ -7,10 +7,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu, X, CaretDown } from "@phosphor-icons/react";
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,9 +31,9 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="text-2xl font-bold text-white tracking-tight">
-              Leonardo.Ai
-            </div>
+            <Link to="/" className="text-2xl font-bold text-white tracking-tight hover:text-purple-400 transition-colors duration-300">
+              OneLast.Ai
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -47,16 +49,16 @@ export function Header() {
                 align="start"
               >
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  AI Image Generation
+                  <Link to="/features" className="w-full">AI Generation</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Real-time Canvas
+                  <Link to="/education" className="w-full">Education Tools</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  3D Texture Generation
+                  <Link to="/business" className="w-full">Business Solutions</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Motion Generation
+                  <Link to="/security" className="w-full">Security & Privacy</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -72,24 +74,24 @@ export function Header() {
                 align="start"
               >
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Marketing & Advertising
+                  <Link to="/solutions" className="w-full">All Solutions</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Game Development
+                  <Link to="/education" className="w-full">Education</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Architecture & Design
+                  <Link to="/business" className="w-full">Business</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Fashion & Product
+                  <Link to="/teams" className="w-full">Teams</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Learn Dropdown */}
+            {/* Resources Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
-                <span>Learn</span>
+                <span>Resources</span>
                 <CaretDown size={14} className="transition-transform duration-200" />
               </DropdownMenuTrigger>
               <DropdownMenuContent 
@@ -97,33 +99,61 @@ export function Header() {
                 align="start"
               >
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Documentation
+                  <Link to="/documentation" className="w-full">Documentation</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Tutorials
+                  <Link to="/tutorials" className="w-full">Tutorials</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Community
+                  <Link to="/community" className="w-full">Community</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
-                  Blog
+                  <Link to="/blog" className="w-full">Blog</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/news" className="w-full">News</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Company Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+                <span>Company</span>
+                <CaretDown size={14} className="transition-transform duration-200" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
+                className="bg-black/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 rounded-xl mt-2"
+                align="start"
+              >
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/about" className="w-full">About Us</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/careers" className="w-full">Careers</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/partners" className="w-full">Partners</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/privacy" className="w-full">Privacy Policy</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
             {/* Regular Navigation Items */}
-            <a href="#teams" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
-              For Teams
-            </a>
-            <a href="#developers" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
-              For Developers
-            </a>
-            <a href="#pricing" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+            <Link to="/developers" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+              Developers
+            </Link>
+            <Link to="/pricing" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
               Pricing
-            </a>
-            <a href="#contact" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+            </Link>
+            <Link to="/support" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+              Support
+            </Link>
+            <Link to="/contact" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* Desktop Button */}
@@ -148,27 +178,27 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-white/10">
             <nav className="flex flex-col space-y-4 pt-4">
-              <a href="#features" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+              <Link to="/features" className="text-white/90 hover:text-white transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
                 Features
-              </a>
-              <a href="#solutions" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/solutions" className="text-white/90 hover:text-white transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
                 Solutions
-              </a>
-              <a href="#learn" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
-                Learn
-              </a>
-              <a href="#teams" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/documentation" className="text-white/90 hover:text-white transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
+                Documentation
+              </Link>
+              <Link to="/teams" className="text-white/90 hover:text-white transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
                 For Teams
-              </a>
-              <a href="#developers" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/developers" className="text-white/90 hover:text-white transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
                 For Developers
-              </a>
-              <a href="#pricing" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/pricing" className="text-white/90 hover:text-white transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
                 Pricing
-              </a>
-              <a href="#contact" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/contact" className="text-white/90 hover:text-white transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
                 Contact
-              </a>
+              </Link>
               <div className="pt-4">
                 <Button 
                   className="w-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 text-white font-medium rounded-full"

@@ -1,4 +1,6 @@
 import { Github, Twitter, Linkedin, Heart, Globe, Mail, Phone } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
+import { siteConfig } from "@/config/site";
 
 export function Footer() {
   return (
@@ -51,11 +53,11 @@ export function Footer() {
           <div className="lg:col-span-2 space-y-6">
             <div className="space-y-4">
               <h3 className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                AI Digital Friend
+                {siteConfig.name}
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-                Experience the future of AI interaction with our cutting-edge terminal design platform. 
-                Build, create, and innovate with intelligent automation.
+                {siteConfig.description}. Build, create, and innovate with our comprehensive AI platform 
+                designed for youth and professionals.
               </p>
             </div>
             
@@ -63,7 +65,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail size={18} className="text-purple-400" />
-                <span>contact@aidigitalfriend.com</span>
+                <span>contact@{siteConfig.domain}</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone size={18} className="text-purple-400" />
@@ -71,19 +73,19 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Globe size={18} className="text-purple-400" />
-                <span>www.aidigitalfriend.com</span>
+                <span>www.{siteConfig.domain}</span>
               </div>
             </div>
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              <a href="#" className="p-3 bg-gray-800/50 hover:bg-purple-600/20 rounded-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group">
+              <a href={siteConfig.social.github} className="p-3 bg-gray-800/50 hover:bg-purple-600/20 rounded-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group">
                 <Github size={20} className="text-gray-400 group-hover:text-purple-400 transition-colors" />
               </a>
-              <a href="#" className="p-3 bg-gray-800/50 hover:bg-blue-600/20 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group">
+              <a href={siteConfig.social.twitter} className="p-3 bg-gray-800/50 hover:bg-blue-600/20 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group">
                 <Twitter size={20} className="text-gray-400 group-hover:text-blue-400 transition-colors" />
               </a>
-              <a href="#" className="p-3 bg-gray-800/50 hover:bg-blue-700/20 rounded-xl border border-gray-700/50 hover:border-blue-600/50 transition-all duration-300 group">
+              <a href={siteConfig.social.linkedin} className="p-3 bg-gray-800/50 hover:bg-blue-700/20 rounded-xl border border-gray-700/50 hover:border-blue-600/50 transition-all duration-300 group">
                 <Linkedin size={20} className="text-gray-400 group-hover:text-blue-500 transition-colors" />
               </a>
             </div>
@@ -93,14 +95,36 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="text-xl font-semibold text-white mb-4">Platform</h4>
             <ul className="space-y-3">
-              {['Terminal Design', 'AI Chat Interface', 'Code Generation', 'API Integration', 'Smart Automation'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
-                    <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-                    <span>{item}</span>
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/features" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>AI Features</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/education" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Education Tools</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/business" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Business Solutions</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/developers" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>API Integration</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/security" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Security & Privacy</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -108,14 +132,30 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="text-xl font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-3">
-              {['About Us', 'Our Mission', 'Team', 'Careers', 'News & Updates'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
-                    <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-                    <span>{item}</span>
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>About Us</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Careers</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/partners" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Partners</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/news" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>News & Updates</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -123,14 +163,36 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="text-xl font-semibold text-white mb-4">Resources</h4>
             <ul className="space-y-3">
-              {['Documentation', 'Help Center', 'Community', 'Privacy Policy', 'Terms of Service'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
-                    <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-                    <span>{item}</span>
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/documentation" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Documentation</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/support" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Help Center</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/community" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Community</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Privacy Policy</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2 group">
+                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <span>Contact</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -139,13 +201,13 @@ export function Footer() {
         <div className="border-t border-gray-800/50 pt-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             <div className="flex items-center space-x-6 text-gray-400">
-              <span className="text-sm">© 2024 AI Digital Friend. All rights reserved.</span>
+              <span className="text-sm">© 2024 {siteConfig.name}. All rights reserved.</span>
               <div className="hidden lg:flex items-center space-x-4 text-xs">
-                <a href="#" className="hover:text-purple-400 transition-colors">Privacy</a>
+                <Link to="/privacy" className="hover:text-purple-400 transition-colors">Privacy</Link>
                 <span>•</span>
-                <a href="#" className="hover:text-purple-400 transition-colors">Terms</a>
+                <Link to="/contact" className="hover:text-purple-400 transition-colors">Terms</Link>
                 <span>•</span>
-                <a href="#" className="hover:text-purple-400 transition-colors">Cookies</a>
+                <Link to="/support" className="hover:text-purple-400 transition-colors">Support</Link>
               </div>
             </div>
             <div className="flex items-center space-x-2 text-sm text-gray-400">
