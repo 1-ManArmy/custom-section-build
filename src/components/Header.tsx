@@ -12,8 +12,10 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20">
-      <div className="container mx-auto px-6 py-3">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-xl shadow-lg shadow-black/20 relative">
+      {/* Animated bottom border */}
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-green-400 via-blue-400 to-purple-600 animate-gradient-spin"></div>
+      <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">

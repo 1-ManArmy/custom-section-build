@@ -4,7 +4,7 @@ import { Sparkles } from "@phosphor-icons/react";
 
 export function HeroSection() {
   return (
-    <div className="min-h-screen bg-transparent flex items-center justify-center p-6 relative pt-24">
+    <div className="min-h-screen bg-transparent flex items-center justify-center p-6 relative pt-28">
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="space-y-8 relative z-10">
