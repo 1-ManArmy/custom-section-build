@@ -8,48 +8,68 @@ export function TerminalDisplay() {
   const [showCursor, setShowCursor] = useState(true);
   const [currentResponse, setCurrentResponse] = useState<string[]>([]);
   const [statsVisible, setStatsVisible] = useState(false);
+  const [activeUsers, setActiveUsers] = useState(0);
+  const [aiQueries, setAiQueries] = useState(0);
+  const [costSaved, setCostSaved] = useState(0);
 
-  // Animated counters for stats
-    ["✓ onelast-ai@2.1.0 installed", "✓ Added 247 AI
-    ["[main 1a2b3c4] Changing generations", "✓ 8
+  // Terminal commands
+  const commands = [
+    "npm install onelast-ai",
+    "onelast-ai --stats",
+    "git commit -m 'Changing generations'",
+    "onelast-ai --deploy"
   ];
 
-    if (commandIndex
-      
-      const userInterval = setInter
-          if (prev >= 12500) {
-            return 12500;
+  // Command responses
+  const responses = [
+    [
+      "✓ onelast-ai@2.1.0 installed",
+      "✓ Added 247 AI features",
+      "✓ Configured for education",
+      "✓ Ready for deployment"
+    ],
+    [
+      "📊 OneLast AI Statistics:",
+      "• Active Users: 12,500+",
+      "• AI Queries: 150,000/day",
+      "• Cost Saved: 95%",
+      "• Countries: 25"
+    ],
+    [
+      "[main 1a2b3c4] Changing generations",
+      "✓ 8 files changed, 247 insertions(+)",
+      "✓ AI education modules updated",
+      "✓ Youth engagement features added"
+    ],
+    [
+      "🚀 Deploying OneLast AI...",
+      "✓ Building for production",
+      "✓ Optimizing AI models",
+      "✓ Deploy successful!"
+    ]
   ];
 
-      const queryInte
-          if (prev >= 150000) {
-            return 150000;
-          return prev + 3000;
-      }, 25);
-  ];
-
-            return 95;
+  // Stats animation effect
   useEffect(() => {
-      }, 50);
-      return () => {
+    if (commandIndex === 1 && currentResponse.length > 0) {
+      setStatsVisible(true);
       
-      };
-      setStatsVisible(false);
-      setAiQueries(0);
+      const userInterval = setInterval(() => {
+        setActiveUsers(prev => {
           if (prev >= 12500) {
-
+            clearInterval(userInterval);
             return 12500;
-    
-      setCurrentResponse(res
-      const
-        setCh
+          }
+          return prev + 250;
+        });
+      }, 25);
 
-      return () => clearTimeout(timer);
-
+      const queryInterval = setInterval(() => {
+        setAiQueries(prev => {
           if (prev >= 150000) {
             clearInterval(queryInterval);
             return 150000;
-
+          }
           return prev + 3000;
         });
       }, 25);
@@ -89,20 +109,20 @@ export function TerminalDisplay() {
         setCharIndex(0);
         setCurrentCommand("");
         setCurrentResponse([]);
-      }, 3500); // Increased delay for stats viewing
+      }, 3500);
       return () => clearTimeout(timer);
     }
 
     const timer = setTimeout(() => {
       setCurrentCommand(command.slice(0, charIndex + 1));
       setCharIndex(charIndex + 1);
-           
+    }, 100);
 
     return () => clearTimeout(timer);
   }, [charIndex, commandIndex]);
 
   // Cursor blinking effect
-                <di
+  useEffect(() => {
     const timer = setInterval(() => {
       setShowCursor(prev => !prev);
     }, 530);
@@ -114,15 +134,15 @@ export function TerminalDisplay() {
       {/* Background with animated dots pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-gray-800/20"></div>
-
+        <div 
           className="absolute inset-0"
-
+          style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, rgba(220, 38, 38, 0.4) 1px, transparent 0)`,
             backgroundSize: '40px 40px',
             animation: 'float 6s ease-in-out infinite'
           }}
         />
-
+      </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -132,11 +152,11 @@ export function TerminalDisplay() {
               <h3 className="text-2xl font-bold text-purple-300 text-left tracking-wide mb-4">UNITED MISSION</h3>
               
               <div className="space-y-4">
-
+                <img 
                   src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=50&pause=1000&color=FF0000&color=A855F7&color=00FF00&center=false&vCenter=true&width=600&lines=Empowering+Youth+Through+AI+-+We+believe+the+future+belongs+to+those+who+understand+it.+That's+why+we're+introducing+young+minds+to+the+world+of+Artificial+Intelligence+in+a+way+that's+creative,+engaging,+and+practical.+Our+mission+is+to+inspire+curiosity,+spark+innovation,+and+provide+the+tools+needed+for+a+smarter,+faster,+and+more+adaptable+tomorrow.+With+interactive+modules,+real-world+projects,+and+fresh+perspectives,+we're+building+a+generation+ready+to+shape+the+future+—+not+just+live+in+it."
                   alt="Empowering Youth Through AI Animation"
                   className="w-full"
-
+                />
               </div>
             </div>
           </div>
@@ -170,9 +190,9 @@ export function TerminalDisplay() {
                 <div key={index} className="text-green-400 animate-fadeIn">
                   {line}
                 </div>
+              ))}
 
-
-
+              {/* Stats Display */}
               {statsVisible && (
                 <div className="mt-6 p-4 bg-gradient-to-r from-cyan-900/20 to-purple-900/20 rounded-lg border border-cyan-500/20">
                   <div className="grid grid-cols-2 gap-4 text-sm">
@@ -190,32 +210,15 @@ export function TerminalDisplay() {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-indigo-400">🌍 Countries Active</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                      <span className="text-white font-bold">25</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
