@@ -219,10 +219,9 @@ export function TerminalDisplay() {
                 </div>
               </div>
 
-              {/* Mission Statement */}
-              <div className="mt-6 p-3 bg-gradient-to-r from-purple-900/20 to-indigo-900/20 rounded-lg border border-purple-500/20">
-                <div className="text-xs text-purple-300 mb-1">// MISSION</div>
-                <div className="text-sm text-gray-300">85% of people don't know what AI is. We're changing that. One youth at a time.</div>
+              {/* United Mission Title */}
+              <div className="mt-6 p-4 bg-gradient-to-r from-purple-900/20 to-indigo-900/20 rounded-lg border border-purple-500/20">
+                <h3 className="text-xl font-bold text-purple-300 text-center tracking-wide">UNITED MISSION</h3>
               </div>
             </div>
           </div>
