@@ -153,7 +153,7 @@ export function TerminalDisplay() {
               
               <div className="space-y-4">
                 <img 
-                  src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=50&pause=1000&color=FF0000&color=A855F7&color=00FF00&center=false&vCenter=true&width=600&lines=Empowering+Youth+Through+AI+-+We+believe+the+future+belongs+to+those+who+understand+it.+That's+why+we're+introducing+young+minds+to+the+world+of+Artificial+Intelligence+in+a+way+that's+creative,+engaging,+and+practical.+Our+mission+is+to+inspire+curiosity,+spark+innovation,+and+provide+the+tools+needed+for+a+smarter,+faster,+and+more+adaptable+tomorrow.+With+interactive+modules,+real-world+projects,+and+fresh+perspectives,+we're+building+a+generation+ready+to+shape+the+future+—+not+just+live+in+it."
+                  src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=50&pause=1000&color=FF0000&color=A855F7&color=00FF00&center=false&vCenter=true&width=1200&lines=Empowering+Youth+Through+AI+-+We+believe+the+future+belongs+to+those+who+understand+it.;That's+why+we're+introducing+young+minds+to+the+world+of+Artificial+Intelligence;in+a+way+that's+creative,+engaging,+and+practical.;Our+mission+is+to+inspire+curiosity,+spark+innovation,;and+provide+the+tools+needed+for+a+smarter,+faster,+and+more+adaptable+tomorrow.;With+interactive+modules,+real-world+projects,+and+fresh+perspectives,;we're+building+a+generation+ready+to+shape+the+future+—+not+just+live+in+it."
                   alt="Empowering Youth Through AI Animation"
                   className="w-full"
                 />
