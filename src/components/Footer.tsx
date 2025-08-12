@@ -23,6 +23,28 @@ export function Footer() {
       <div className="absolute bottom-16 left-16 w-24 h-24 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
       
       <div className="relative max-w-7xl mx-auto px-6 py-16">
+        {/* Newsletter Subscription */}
+        <div className="bg-gradient-to-r from-purple-900/20 via-gray-900/40 to-blue-900/20 rounded-2xl border border-gray-700/50 p-8 mb-12">
+          <div className="text-center space-y-4">
+            <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Stay Updated
+            </h4>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Get the latest updates on AI innovations, new features, and exclusive insights delivered to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/25 transition-all"
+              />
+              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand Section - Takes 2 columns */}
@@ -110,28 +132,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        {/* Newsletter Subscription */}
-        <div className="bg-gradient-to-r from-purple-900/20 via-gray-900/40 to-blue-900/20 rounded-2xl border border-gray-700/50 p-8 mb-12">
-          <div className="text-center space-y-4">
-            <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Stay Updated
-            </h4>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Get the latest updates on AI innovations, new features, and exclusive insights delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/25 transition-all"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25">
-                Subscribe
-              </button>
-            </div>
           </div>
         </div>
 
