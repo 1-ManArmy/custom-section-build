@@ -125,31 +125,59 @@ export function ChatSection() {
   };
 
   return (
-    <section className="py-16 px-6 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 px-6 relative bg-black overflow-hidden">
+      {/* Red Dotted Background Pattern */}
+      <div 
+        className="absolute inset-0 opacity-60"
+        style={{
+          backgroundImage: `radial-gradient(circle, #dc2626 1px, transparent 1px)`,
+          backgroundSize: '30px 30px',
+          backgroundPosition: '0 0, 15px 15px'
+        }}
+      />
+      {/* Additional scattered red dots */}
+      <div 
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: `radial-gradient(circle, #ef4444 0.8px, transparent 0.8px)`,
+          backgroundSize: '45px 45px',
+          backgroundPosition: '7px 7px'
+        }}
+      />
+      {/* More varied dot pattern */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `radial-gradient(circle, #dc2626 0.6px, transparent 0.6px)`,
+          backgroundSize: '60px 60px',
+          backgroundPosition: '20px 20px'
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
             Chat with{" "}
             <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-600 bg-clip-text text-transparent">
               AI Assistant
             </span>
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Experience natural conversations with file uploads, voice messages, and intelligent responses
           </p>
         </div>
 
         {/* Chat Interface */}
         <div className="max-w-4xl mx-auto">
-          <Card className="border-2 border-gray-800/20 bg-gray-900/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl">
+          <Card className="border-2 border-red-500/30 bg-black/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl shadow-red-500/20">
             {/* Chat Header */}
-            <div className="p-4 border-b border-gray-700/50 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20">
+            <div className="p-4 border-b border-red-500/30 bg-gradient-to-r from-red-500/20 via-red-600/20 to-red-700/20">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
                   <span className="font-medium text-white">AI Assistant</span>
-                  <Badge variant="secondary" className="text-xs bg-gray-700 text-gray-200">Online</Badge>
+                  <Badge variant="secondary" className="text-xs bg-red-900/50 text-red-200 border-red-500/30">Online</Badge>
                 </div>
                 <div className="text-sm text-gray-400">
                   {messages.length} messages
@@ -158,7 +186,7 @@ export function ChatSection() {
             </div>
 
             {/* Messages Area */}
-            <ScrollArea className="h-96 p-4 bg-gray-900">
+            <ScrollArea className="h-96 p-4 bg-black/95">
               <div className="space-y-4">
                 {messages.map((message) => (
                   <div
@@ -168,8 +196,8 @@ export function ChatSection() {
                     {/* Avatar */}
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white ${
                       message.type === 'user' 
-                        ? 'bg-gradient-to-br from-blue-500 to-purple-600' 
-                        : 'bg-gradient-to-br from-green-500 to-blue-600'
+                        ? 'bg-gradient-to-br from-red-500 to-red-600' 
+                        : 'bg-gradient-to-br from-red-600 to-red-700'
                     }`}>
                       {message.type === 'user' ? <User size={16} /> : <Robot size={16} />}
                     </div>
@@ -178,8 +206,8 @@ export function ChatSection() {
                     <div className={`flex-1 max-w-xs lg:max-w-md ${message.type === 'user' ? 'text-right' : 'text-left'}`}>
                       <div className={`rounded-2xl p-3 ${
                         message.type === 'user'
-                          ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white'
-                          : 'bg-gray-800 text-gray-100'
+                          ? 'bg-gradient-to-br from-red-500 to-red-600 text-white'
+                          : 'bg-gray-900/80 text-gray-100 border border-red-500/20'
                       }`}>
                         <p className="text-sm leading-relaxed">{message.content}</p>
                         
@@ -208,14 +236,14 @@ export function ChatSection() {
                 {/* Typing Indicator */}
                 {isTyping && (
                   <div className="flex gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center text-white">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center text-white">
                       <Robot size={16} />
                     </div>
-                    <div className="bg-gray-800 rounded-2xl p-3">
+                    <div className="bg-gray-900/80 border border-red-500/20 rounded-2xl p-3">
                       <div className="flex gap-1">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     </div>
                   </div>
@@ -224,7 +252,7 @@ export function ChatSection() {
             </ScrollArea>
 
             {/* Input Area */}
-            <div className="p-4 border-t border-gray-700/50 bg-gray-900">
+            <div className="p-4 border-t border-red-500/30 bg-black/95">
               <div className="flex gap-2 items-end">
                 {/* File Input */}
                 <input
@@ -240,7 +268,7 @@ export function ChatSection() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="aspect-square p-2 border-2 border-gray-600 bg-gray-800 text-gray-300 hover:bg-gray-700"
+                  className="aspect-square p-2 border-2 border-red-500/50 bg-black/80 text-red-300 hover:bg-red-900/30 hover:border-red-400"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <Paperclip size={16} />
@@ -253,7 +281,7 @@ export function ChatSection() {
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={handleKeyPress}
                     placeholder="Type your message..."
-                    className="pr-12 border-2 border-gray-600 rounded-xl bg-gray-800 text-gray-100 placeholder-gray-400"
+                    className="pr-12 border-2 border-red-500/50 rounded-xl bg-black/80 text-gray-100 placeholder-gray-500 focus:border-red-400"
                   />
                 </div>
 
@@ -263,8 +291,8 @@ export function ChatSection() {
                   size="sm"
                   className={`aspect-square p-2 border-2 transition-all duration-200 ${
                     isRecording 
-                      ? 'border-red-500 bg-red-500/20 text-red-400 animate-pulse' 
-                      : 'border-gray-600 bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      ? 'border-red-400 bg-red-500/30 text-red-300 animate-pulse' 
+                      : 'border-red-500/50 bg-black/80 text-red-300 hover:bg-red-900/30 hover:border-red-400'
                   }`}
                   onClick={toggleRecording}
                 >
@@ -274,7 +302,7 @@ export function ChatSection() {
                 {/* Send Button */}
                 <Button
                   size="sm"
-                  className="aspect-square p-2 bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 border-0"
+                  className="aspect-square p-2 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 border-0"
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim()}
                 >
