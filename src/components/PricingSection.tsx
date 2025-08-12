@@ -161,7 +161,7 @@ export function PricingSection() {
 
         {/* Additional info */}
         <div className="text-center mt-12 space-y-4">
-          <p className="text-muted-foreground">All plans include 7-day free trial • Cancel anytime • No hidden fees</p>
+          <p className="text-muted-foreground">Your support fuels our dreams — and builds the future of AI, together.</p>
           <div className="flex justify-center gap-4 text-sm text-muted-foreground">
             <span>💳 Secure payment</span>
             <span>🔒 SSL encrypted</span>
