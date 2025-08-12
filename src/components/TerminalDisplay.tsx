@@ -224,12 +224,12 @@ export function TerminalDisplay() {
                 <div className="flex flex-col items-start">
                   <h3 className="text-2xl font-bold text-purple-300 tracking-wide mb-6">UNITED MISSION</h3>
                   
-                  {/* Animated Typing SVG - Left Aligned */}
-                  <div className="w-full">
+                  {/* Animated Typing SVG - Multiple Lines for Better Wrapping */}
+                  <div className="w-full space-y-2 break-words overflow-hidden">
                     <img 
-                      src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=50&pause=1000&color=FF0000&color=A855F7&color=00FF00&center=false&vCenter=true&width=1200&lines=Empowering+Youth+Through+AI+-+We+believe+the+future+belongs+to+those+who+understand+it.+That's+why+we're+introducing+young+minds+to+the+world+of+Artificial+Intelligence+in+a+way+that's+creative,+engaging,+and+practical.+Our+mission+is+to+inspire+curiosity,+spark+innovation,+and+provide+the+tools+needed+for+a+smarter,+faster,+and+more+adaptable+tomorrow.+With+interactive+modules,+real-world+projects,+and+fresh+perspectives,+we're+building+a+generation+ready+to+shape+the+future+—+not+just+live+in+it." 
+                      src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=A855F7&center=false&vCenter=true&width=900&lines=Empowering+Youth+Through+AI;We+believe+the+future+belongs+to+those+who+understand+it;Introducing+young+minds+to+AI+in+creative+ways;Our+mission+is+to+inspire+curiosity+and+spark+innovation;Building+a+generation+ready+to+shape+the+future" 
                       alt="Empowering Youth Through AI Animation"
-                      className="max-w-full h-auto"
+                      className="w-full h-auto max-w-full"
                     />
                   </div>
                 </div>
