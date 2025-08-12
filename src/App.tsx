@@ -9,7 +9,7 @@ import { PricingSection } from "@/components/PricingSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { CardSection } from "@/components/CardSection";
 import { FAQSection } from "@/components/FAQSection";
-import { StatsSection } from "@/components/StatsSection";
+
 import { Footer } from "@/components/Footer";
 
 function App() {
@@ -49,7 +49,6 @@ function App() {
                 <PartnersSection />
                 <CardSection />
                 <FAQSection />
-                <StatsSection />
                 <Footer />
             </div>
         </div>
