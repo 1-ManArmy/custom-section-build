@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ChatSection } from "@/components/ChatSection";
 import { TerminalDisplay } from "@/components/TerminalDisplay";
@@ -34,6 +35,7 @@ function App() {
             
             {/* Content */}
             <div className="relative z-10">
+                <Header />
                 <HeroSection />
                 <ChatSection />
                 <TerminalDisplay />
