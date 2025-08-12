@@ -5,7 +5,6 @@ import { CardSection } from "@/components/CardSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { BannerSection } from "@/components/BannerSection";
 import { PricingSection } from "@/components/PricingSection";
-import { Footer } from "@/components/Footer";
 import { Sparkles } from "@phosphor-icons/react";
 
 export function HeroSection() {
@@ -69,9 +68,6 @@ export function HeroSection() {
       
       {/* Chat Section */}
       <ChatSection />
-      
-      {/* Footer */}
-      <Footer />
     </>
   );
 }
