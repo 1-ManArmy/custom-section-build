@@ -38,6 +38,70 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
+            {/* AI Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+                <span>AI Services</span>
+                <CaretDown size={14} className="transition-transform duration-200" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
+                className="bg-black/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 rounded-xl mt-2 max-h-96 overflow-y-auto"
+                align="start"
+              >
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/neochat" className="w-full">NeoChat</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/emotisense" className="w-full">EmotiSense</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/cinegen" className="w-full">CineGen</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/contentcrafter" className="w-full">ContentCrafter</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/memora" className="w-full">Memora</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/netscope" className="w-full">NetScope</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/datavision" className="w-full">DataVision</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/infoseek" className="w-full">InfoSeek</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/personax" className="w-full">PersonaX</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/authwise" className="w-full">AuthWise</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/ideaforge" className="w-full">IdeaForge</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/vocamind" className="w-full">VocaMind</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/taskmaster" className="w-full">TaskMaster</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/reportly" className="w-full">Reportly</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/datasphere" className="w-full">DataSphere</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/configai" className="w-full">ConfigAI</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  <Link to="/labx" className="w-full">LabX</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             {/* Features Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
@@ -178,6 +242,68 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-white/10">
             <nav className="flex flex-col space-y-4 pt-4">
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center justify-between text-white/90 hover:text-white transition-colors duration-300 font-medium w-full text-left">
+                  <span>AI Services</span>
+                  <CaretDown size={14} className="transition-transform duration-200" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                  className="bg-black/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 rounded-xl mt-2 w-full max-h-64 overflow-y-auto"
+                  align="start"
+                >
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/neochat" className="w-full" onClick={() => setIsMenuOpen(false)}>NeoChat</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/emotisense" className="w-full" onClick={() => setIsMenuOpen(false)}>EmotiSense</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/cinegen" className="w-full" onClick={() => setIsMenuOpen(false)}>CineGen</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/contentcrafter" className="w-full" onClick={() => setIsMenuOpen(false)}>ContentCrafter</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/memora" className="w-full" onClick={() => setIsMenuOpen(false)}>Memora</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/netscope" className="w-full" onClick={() => setIsMenuOpen(false)}>NetScope</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/datavision" className="w-full" onClick={() => setIsMenuOpen(false)}>DataVision</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/infoseek" className="w-full" onClick={() => setIsMenuOpen(false)}>InfoSeek</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/personax" className="w-full" onClick={() => setIsMenuOpen(false)}>PersonaX</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/authwise" className="w-full" onClick={() => setIsMenuOpen(false)}>AuthWise</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/ideaforge" className="w-full" onClick={() => setIsMenuOpen(false)}>IdeaForge</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/vocamind" className="w-full" onClick={() => setIsMenuOpen(false)}>VocaMind</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/taskmaster" className="w-full" onClick={() => setIsMenuOpen(false)}>TaskMaster</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/reportly" className="w-full" onClick={() => setIsMenuOpen(false)}>Reportly</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/datasphere" className="w-full" onClick={() => setIsMenuOpen(false)}>DataSphere</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/configai" className="w-full" onClick={() => setIsMenuOpen(false)}>ConfigAI</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                    <Link to="/labx" className="w-full" onClick={() => setIsMenuOpen(false)}>LabX</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Link to="/features" className="text-white/90 hover:text-white transition-colors duration-300 font-medium" onClick={() => setIsMenuOpen(false)}>
                 Features
               </Link>

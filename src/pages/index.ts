@@ -18,3 +18,22 @@ export { CareersPage } from './CareersPage';
 export { PartnersPage } from './PartnersPage';
 export { SecurityPage } from './SecurityPage';
 export { PrivacyPage } from './PrivacyPage';
+
+// AI Service Pages
+export { ChatPage } from './ChatPage';
+export { MoodAnalyzerPage } from './MoodAnalyzerPage';
+export { CinematicPage } from './CinematicPage';
+export { CreatorToolsPage } from './CreatorToolsPage';
+export { MemoryPage } from './MemoryPage';
+export { IPInfoPage } from './IPInfoPage';
+export { APIAnalyticsDashboard } from './APIAnalyticsDashboard';
+export { SearchPage } from './SearchPage';
+export { ProfilePage } from './ProfilePage';
+export { AuthPage } from './AuthPage';
+export { AIStudioPage } from './AIStudioPage';
+export { VoiceAssistantPage } from './VoiceAssistantPage';
+export { TaskManagerPage } from './TaskManagerPage';
+export { ReportsPage } from './ReportsPage';
+export { DataDashboardPage } from './DataDashboardPage';
+export { SettingsPage } from './SettingsPage';
+export { AILabPage } from './AILabPage';

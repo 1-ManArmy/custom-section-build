@@ -21,7 +21,25 @@ import {
   CareersPage,
   PartnersPage,
   SecurityPage,
-  PrivacyPage
+  PrivacyPage,
+  // AI Service Pages
+  ChatPage,
+  MoodAnalyzerPage,
+  CinematicPage,
+  CreatorToolsPage,
+  MemoryPage,
+  IPInfoPage,
+  APIAnalyticsDashboard,
+  SearchPage,
+  ProfilePage,
+  AuthPage,
+  AIStudioPage,
+  VoiceAssistantPage,
+  TaskManagerPage,
+  ReportsPage,
+  DataDashboardPage,
+  SettingsPage,
+  AILabPage
 } from "@/pages";
 
 function App() {
@@ -73,6 +91,28 @@ function App() {
                         <Route path="/partners" element={<PartnersPage />} />
                         <Route path="/security" element={<SecurityPage />} />
                         <Route path="/privacy" element={<PrivacyPage />} />
+                        
+                        {/* AI Service Subdomains - Available as Routes */}
+                        <Route path="/neochat" element={<ChatPage />} />
+                        <Route path="/emotisense" element={<MoodAnalyzerPage />} />
+                        <Route path="/cinegen" element={<CinematicPage />} />
+                        <Route path="/contentcrafter" element={<CreatorToolsPage />} />
+                        <Route path="/memora" element={<MemoryPage />} />
+                        <Route path="/netscope" element={<IPInfoPage />} />
+                        <Route path="/aiblogster" element={<BlogPage />} />
+                        <Route path="/datavision" element={<APIAnalyticsDashboard />} />
+                        <Route path="/infoseek" element={<SearchPage />} />
+                        <Route path="/documind" element={<DocumentationPage />} />
+                        <Route path="/carebot" element={<SupportPage />} />
+                        <Route path="/personax" element={<ProfilePage />} />
+                        <Route path="/authwise" element={<AuthPage />} />
+                        <Route path="/ideaforge" element={<AIStudioPage />} />
+                        <Route path="/vocamind" element={<VoiceAssistantPage />} />
+                        <Route path="/taskmaster" element={<TaskManagerPage />} />
+                        <Route path="/reportly" element={<ReportsPage />} />
+                        <Route path="/datasphere" element={<DataDashboardPage />} />
+                        <Route path="/configai" element={<SettingsPage />} />
+                        <Route path="/labx" element={<AILabPage />} />
                     </Routes>
                     <Footer />
                 </div>
