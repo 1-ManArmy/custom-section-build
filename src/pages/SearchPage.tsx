@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { MagnifyingGlass } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function SearchPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
-              InfoSeek
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI-Powered Search Engine
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Intelligent Search Platform
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Find information with AI-enhanced search
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="InfoSeek"
+      agentDescription="Revolutionary AI-powered search and information discovery platform. Find precise answers, explore topics deeply, get contextual insights, and discover relevant information with intelligent search algorithms."
+      agentIcon={<MagnifyingGlass size={32} className="text-white" />}
+      gradientColors="from-pink-400 via-rose-500 to-purple-600"
+      borderColor="border-pink-500/30"
+      primaryColor="from-pink-500/20 via-rose-500/20 to-purple-500/20"
+      welcomeMessage="Hello! I'm InfoSeek, your AI search assistant. I can help you find precise information, explore topics in depth, and discover relevant insights. What would you like to search for today?"
+    />
   );
 }

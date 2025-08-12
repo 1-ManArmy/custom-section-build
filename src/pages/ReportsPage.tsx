@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { FileText } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function ReportsPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-              Reportly
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI Report Generation Suite
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Automated Report Creation
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Generate comprehensive reports with AI
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="Reportly"
+      agentDescription="Advanced AI report generation and documentation suite. Create comprehensive reports, analyze data trends, generate insights, and produce professional documents with intelligent automation and customizable templates."
+      agentIcon={<FileText size={32} className="text-white" />}
+      gradientColors="from-orange-400 via-red-500 to-pink-600"
+      borderColor="border-orange-500/30"
+      primaryColor="from-orange-500/20 via-red-500/20 to-pink-500/20"
+      welcomeMessage="Hello! I'm Reportly, your AI report generation assistant. I can help you create comprehensive reports, analyze data, generate insights, and produce professional documents. What report would you like to create?"
+    />
   );
 }

@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Lightbulb } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function AIStudioPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-lime-400 to-green-400 bg-clip-text text-transparent">
-              IdeaForge
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI Creative Studio Platform
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - AI-Powered Creative Studio
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Forge innovative ideas with AI assistance
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="IdeaForge"
+      agentDescription="Revolutionary AI creative studio and innovation platform. Generate breakthrough ideas, develop concepts, create prototypes, and bring your vision to life with advanced AI-powered creative tools and inspiration."
+      agentIcon={<Lightbulb size={32} className="text-white" />}
+      gradientColors="from-lime-400 via-green-500 to-emerald-600"
+      borderColor="border-lime-500/30"
+      primaryColor="from-lime-500/20 via-green-500/20 to-emerald-500/20"
+      welcomeMessage="Hello! I'm IdeaForge, your AI creative assistant. I can help you generate innovative ideas, develop concepts, create prototypes, and bring your creative vision to life. What would you like to create today?"
+    />
   );
 }

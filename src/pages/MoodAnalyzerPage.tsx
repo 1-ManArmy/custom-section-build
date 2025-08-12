@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Heart } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function MoodAnalyzerPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              EmotiSense
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI-Powered Emotion Analysis
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Advanced Mood & Emotion Detection
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Understand emotions through AI analysis
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="EmotiSense"
+      agentDescription="Advanced emotion and mood analysis AI powered by cutting-edge sentiment analysis. Understand emotional patterns, track mood changes, and gain insights into psychological well-being with precision accuracy."
+      agentIcon={<Heart size={32} className="text-white" />}
+      gradientColors="from-pink-400 via-red-500 to-orange-600"
+      borderColor="border-pink-500/30"
+      primaryColor="from-pink-500/20 via-red-500/20 to-orange-500/20"
+      welcomeMessage="Hello! I'm EmotiSense, your emotion analysis AI. I can help you understand emotional patterns, analyze sentiment, and provide insights into mood and psychological well-being. How can I assist you today?"
+    />
   );
 }

@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { FlaskConical } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function AILabPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
-              LabX
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI Research Laboratory
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - AI Experimentation Platform
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Explore cutting-edge AI technologies
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="LabX"
+      agentDescription="Cutting-edge AI research laboratory and experimentation platform. Explore advanced AI models, conduct experiments, test hypotheses, and discover breakthrough technologies with state-of-the-art research tools."
+      agentIcon={<FlaskConical size={32} className="text-white" />}
+      gradientColors="from-fuchsia-400 via-pink-500 to-rose-600"
+      borderColor="border-fuchsia-500/30"
+      primaryColor="from-fuchsia-500/20 via-pink-500/20 to-rose-500/20"
+      welcomeMessage="Hello! I'm LabX, your AI research assistant. I can help you explore advanced AI models, conduct experiments, test theories, and discover breakthrough technologies. What would you like to research today?"
+    />
   );
 }

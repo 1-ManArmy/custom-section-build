@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Shield } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function AuthPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">
-              AuthWise
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              Intelligent Authentication System
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Smart Authentication Platform
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Secure login with AI-powered protection
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="AuthWise"
+      agentDescription="Intelligent authentication and security management system. Advanced user verification, biometric authentication, security monitoring, and AI-powered threat detection for comprehensive digital protection."
+      agentIcon={<Shield size={32} className="text-white" />}
+      gradientColors="from-amber-400 via-yellow-500 to-orange-600"
+      borderColor="border-amber-500/30"
+      primaryColor="from-amber-500/20 via-yellow-500/20 to-orange-500/20"
+      welcomeMessage="Hello! I'm AuthWise, your AI security assistant. I can help you with authentication, security monitoring, threat detection, and digital protection. How can I secure your digital presence today?"
+    />
   );
 }

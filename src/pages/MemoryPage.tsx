@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Brain } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function MemoryPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              Memora
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI Memory Enhancement System
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - AI-Powered Memory Tools
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Enhance your memory with AI assistance
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="Memora"
+      agentDescription="Advanced AI memory enhancement and knowledge management system. Store, organize, retrieve, and connect information seamlessly. Boost your cognitive abilities with intelligent memory assistance and context-aware recall."
+      agentIcon={<Brain size={32} className="text-white" />}
+      gradientColors="from-indigo-400 via-purple-500 to-pink-600"
+      borderColor="border-indigo-500/30"
+      primaryColor="from-indigo-500/20 via-purple-500/20 to-pink-500/20"
+      welcomeMessage="Hello! I'm Memora, your AI memory enhancement assistant. I can help you store, organize, and retrieve information, create knowledge connections, and boost your cognitive abilities. How can I enhance your memory today?"
+    />
   );
 }

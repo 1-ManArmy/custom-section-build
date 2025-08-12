@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { PaintBrush } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function CreatorToolsPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-              ContentCrafter
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI Content Creation Suite
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Advanced Content Creation Tools
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Craft engaging content with AI assistance
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="ContentCrafter"
+      agentDescription="Comprehensive AI content creation suite for creators and marketers. Generate blog posts, social media content, marketing copy, creative writing, and multimedia content with advanced AI assistance."
+      agentIcon={<PaintBrush size={32} className="text-white" />}
+      gradientColors="from-green-400 via-emerald-500 to-teal-600"
+      borderColor="border-green-500/30"
+      primaryColor="from-green-500/20 via-emerald-500/20 to-teal-500/20"
+      welcomeMessage="Hello! I'm ContentCrafter, your AI content creation assistant. I can help you craft engaging blog posts, social media content, marketing copy, and creative writing. What would you like to create today?"
+    />
   );
 }

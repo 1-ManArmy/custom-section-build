@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Gear } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function SettingsPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-slate-400 to-gray-400 bg-clip-text text-transparent">
-              ConfigAI
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI Configuration Center
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Smart Configuration Tools
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Configure AI systems intelligently
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="ConfigAI"
+      agentDescription="Intelligent AI configuration and settings management center. Customize AI behavior, optimize performance, manage preferences, and fine-tune system parameters with smart configuration assistance."
+      agentIcon={<Gear size={32} className="text-white" />}
+      gradientColors="from-slate-400 via-gray-500 to-zinc-600"
+      borderColor="border-slate-500/30"
+      primaryColor="from-slate-500/20 via-gray-500/20 to-zinc-500/20"
+      welcomeMessage="Hello! I'm ConfigAI, your AI configuration assistant. I can help you customize settings, optimize performance, manage preferences, and fine-tune system parameters. What would you like to configure?"
+    />
   );
 }

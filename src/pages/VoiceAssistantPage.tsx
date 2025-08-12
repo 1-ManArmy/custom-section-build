@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Microphone } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function VoiceAssistantPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
-              VocaMind
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              Advanced Voice AI Assistant
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Voice-Powered AI Interface
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Interact with AI through natural speech
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="VocaMind"
+      agentDescription="Advanced voice AI assistant with natural language processing and speech recognition. Experience hands-free interaction, voice commands, real-time transcription, and intelligent voice-powered assistance."
+      agentIcon={<Microphone size={32} className="text-white" />}
+      gradientColors="from-sky-400 via-blue-500 to-indigo-600"
+      borderColor="border-sky-500/30"
+      primaryColor="from-sky-500/20 via-blue-500/20 to-indigo-500/20"
+      welcomeMessage="Hello! I'm VocaMind, your voice AI assistant. I can help you with voice commands, transcription, natural speech interaction, and hands-free assistance. Just speak and I'll listen!"
+    />
   );
 }

@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { UserCircle } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function ProfilePage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
-              PersonaX
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI Personality Profile System
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Advanced Profile Management
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Create and manage AI-powered profiles
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="PersonaX"
+      agentDescription="Advanced AI personality profile and identity management system. Create detailed profiles, analyze personality traits, manage digital identities, and optimize personal branding with intelligent insights."
+      agentIcon={<UserCircle size={32} className="text-white" />}
+      gradientColors="from-violet-400 via-purple-500 to-indigo-600"
+      borderColor="border-violet-500/30"
+      primaryColor="from-violet-500/20 via-purple-500/20 to-indigo-500/20"
+      welcomeMessage="Hello! I'm PersonaX, your AI profile assistant. I can help you create detailed profiles, analyze personality traits, manage digital identities, and optimize your personal brand. How can I assist with your profile today?"
+    />
   );
 }

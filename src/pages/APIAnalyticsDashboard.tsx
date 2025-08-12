@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChartBar } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function APIAnalyticsDashboard() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
-              DataVision
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              Advanced Analytics Dashboard
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - AI-Powered Data Analytics
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Visualize and analyze data with AI
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="DataVision"
+      agentDescription="Advanced AI-powered analytics and data visualization platform. Transform complex data into actionable insights with intelligent charts, real-time monitoring, predictive analytics, and comprehensive reporting dashboards."
+      agentIcon={<ChartBar size={32} className="text-white" />}
+      gradientColors="from-teal-400 via-blue-500 to-indigo-600"
+      borderColor="border-teal-500/30"
+      primaryColor="from-teal-500/20 via-blue-500/20 to-indigo-500/20"
+      welcomeMessage="Hello! I'm DataVision, your AI analytics assistant. I can help you visualize data, create reports, analyze trends, and generate actionable insights from your information. What data would you like to explore?"
+    />
   );
 }

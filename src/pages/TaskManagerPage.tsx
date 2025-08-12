@@ -1,28 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckSquare } from "@phosphor-icons/react";
+import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function TaskManagerPage() {
   return (
-    <div className="min-h-screen pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur border-purple-500/20">
-          <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              TaskMaster
-            </CardTitle>
-            <CardDescription className="text-xl text-muted-foreground">
-              AI-Powered Task Management
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center py-20">
-            <p className="text-2xl text-foreground/80">
-              Coming Soon - Intelligent Task Organization
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              Master your tasks with AI assistance
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <AgentPageTemplate
+      agentName="TaskMaster"
+      agentDescription="Intelligent AI-powered task management and productivity optimization platform. Organize tasks, set priorities, track progress, automate workflows, and boost productivity with smart scheduling and reminders."
+      agentIcon={<CheckSquare size={32} className="text-white" />}
+      gradientColors="from-emerald-400 via-teal-500 to-cyan-600"
+      borderColor="border-emerald-500/30"
+      primaryColor="from-emerald-500/20 via-teal-500/20 to-cyan-500/20"
+      welcomeMessage="Hello! I'm TaskMaster, your AI productivity assistant. I can help you organize tasks, set priorities, track progress, and optimize your productivity. What tasks would you like to manage today?"
+    />
   );
 }
