@@ -56,11 +56,7 @@ export const AIToolSection = () => {
                                     <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1 w-5 h-10 bg-cyan-400 rounded-l-lg" />
                                 </div>
                                 
-                                {/* Letter 'i' next to the icon */}
-                                <div className="absolute -right-10 top-1/2 transform -translate-y-1/2 w-8 h-20 bg-gradient-to-b from-cyan-400 to-cyan-300 rounded-full flex flex-col items-center justify-center">
-                                    <div className="w-3 h-3 bg-slate-900 rounded-full mb-2" />
-                                    <div className="w-2 h-10 bg-slate-900 rounded-full" />
-                                </div>
+
                             </div>
                         </div>
                     </div>
