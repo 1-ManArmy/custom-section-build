@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Menu, X, CaretDown, Terminal, Sparkles, ChevronDown, ChevronUp, Microphone, Paperclip, Send, Code, Brain, Zap, Shield, Users, Star, Check } from "@phosphor-icons/react";
+import { List, X, CaretDown, Terminal, Sparkle, CaretUp, Microphone, Paperclip, PaperPlaneTilt, Code, Brain, Lightning, Shield, Users, Star, Check } from "@phosphor-icons/react";
 
 // FAQ Data
 const faqData = [
@@ -254,7 +254,7 @@ export function IndependentHomepage() {
                 className="lg:hidden text-white/90 hover:text-white transition-colors duration-300"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMenuOpen ? <X size={24} /> : <List size={24} />}
               </button>
             </div>
 
@@ -303,7 +303,7 @@ export function IndependentHomepage() {
             <div className="space-y-8 relative z-10">
               <div className="space-y-6">
                 <div className="flex items-center space-x-2 mb-4">
-                  <Sparkles size={24} className="text-purple-400" />
+                  <Sparkle size={24} className="text-purple-400" />
                   <span className="text-purple-400 font-medium">AI-Powered Terminal</span>
                 </div>
                 
@@ -516,7 +516,7 @@ export function IndependentHomepage() {
                       onClick={handleSendMessage}
                       className="bg-purple-600 hover:bg-purple-700 text-white"
                     >
-                      <Send size={18} />
+                      <PaperPlaneTilt size={18} />
                     </Button>
                   </div>
                 </div>
@@ -666,7 +666,7 @@ export function IndependentHomepage() {
               <Card className="bg-gray-900/50 border-gray-700/50 backdrop-blur-sm">
                 <CardHeader>
                   <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
-                    <Zap size={24} className="text-white" />
+                    <Lightning size={24} className="text-white" />
                   </div>
                   <CardTitle className="text-white">Lightning Fast</CardTitle>
                   <CardDescription className="text-gray-400">
@@ -860,9 +860,9 @@ export function IndependentHomepage() {
                   >
                     <span className="text-white font-medium">{faq.question}</span>
                     {openFAQ === index ? (
-                      <ChevronUp size={20} className="text-purple-400" />
+                      <CaretUp size={20} className="text-purple-400" />
                     ) : (
-                      <ChevronDown size={20} className="text-purple-400" />
+                      <CaretDown size={20} className="text-purple-400" />
                     )}
                   </button>
                   {openFAQ === index && (

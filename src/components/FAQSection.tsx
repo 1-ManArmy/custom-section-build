@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronUp } from '@phosphor-icons/react';
+import { CaretDown, CaretUp } from '@phosphor-icons/react';
 
 interface FAQItem {
     question: string;
@@ -142,9 +142,9 @@ export function FAQSection() {
                                     </h3>
                                     <div className="flex-shrink-0 w-6 h-6 text-purple-400">
                                         {openItems.includes(index) ? (
-                                            <ChevronUp size={24} />
+                                            <CaretUp size={24} />
                                         ) : (
-                                            <ChevronDown size={24} />
+                                            <CaretDown size={24} />
                                         )}
                                     </div>
                                 </button>
