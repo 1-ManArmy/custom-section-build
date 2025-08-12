@@ -152,11 +152,18 @@ export function TerminalDisplay() {
               <h3 className="text-2xl font-bold text-purple-300 text-left tracking-wide mb-4">UNITED MISSION</h3>
               
               <div className="space-y-4">
-                <img 
-                  src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=50&pause=1000&color=FF0000&color=A855F7&color=00FF00&center=false&vCenter=true&width=1200&lines=Empowering+Youth+Through+AI+-+We+believe+the+future+belongs+to+those+who+understand+it.;That's+why+we're+introducing+young+minds+to+the+world+of+Artificial+Intelligence;in+a+way+that's+creative,+engaging,+and+practical.;Our+mission+is+to+inspire+curiosity,+spark+innovation,;and+provide+the+tools+needed+for+a+smarter,+faster,+and+more+adaptable+tomorrow.;With+interactive+modules,+real-world+projects,+and+fresh+perspectives,;we're+building+a+generation+ready+to+shape+the+future+—+not+just+live+in+it."
-                  alt="Empowering Youth Through AI Animation"
-                  className="w-full"
-                />
+                <div className="text-white/90 leading-relaxed">
+                  <p className="text-lg font-medium mb-4">Empowering Youth Through AI</p>
+                  <p className="text-base">
+                    We believe the future belongs to those who understand it. That's why we're introducing young minds to the world of Artificial Intelligence in a way that's creative, engaging, and practical.
+                  </p>
+                  <p className="text-base mt-4">
+                    Our mission is to inspire curiosity, spark innovation, and provide the tools needed for a smarter, faster, and more adaptable tomorrow.
+                  </p>
+                  <p className="text-base mt-4">
+                    With interactive modules, real-world projects, and fresh perspectives, we're building a generation ready to shape the future — not just live in it.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
