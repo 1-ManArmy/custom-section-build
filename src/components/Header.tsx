@@ -1,64 +1,131 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles } from "@phosphor-icons/react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, X, CaretDown } from "@phosphor-icons/react";
 import { useState } from "react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-purple-500/20">
-      <div className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <Sparkles size={20} className="text-white" weight="bold" />
-              </div>
-              <div className="absolute -inset-1 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg blur opacity-75 animate-pulse"></div>
-            </div>
-            <div className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              OneLast AI
+            <div className="text-2xl font-bold text-white tracking-tight">
+              Leonardo.Ai
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
-              Features
+          <nav className="hidden lg:flex items-center space-x-8">
+            {/* Features Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+                <span>Features</span>
+                <CaretDown size={14} className="transition-transform duration-200" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
+                className="bg-black/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 rounded-xl mt-2"
+                align="start"
+              >
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  AI Image Generation
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Real-time Canvas
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  3D Texture Generation
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Motion Generation
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Solutions Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+                <span>Solutions</span>
+                <CaretDown size={14} className="transition-transform duration-200" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
+                className="bg-black/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 rounded-xl mt-2"
+                align="start"
+              >
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Marketing & Advertising
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Game Development
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Architecture & Design
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Fashion & Product
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Learn Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+                <span>Learn</span>
+                <CaretDown size={14} className="transition-transform duration-200" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
+                className="bg-black/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 rounded-xl mt-2"
+                align="start"
+              >
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Documentation
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Tutorials
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Community
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-white/90 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white cursor-pointer">
+                  Blog
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Regular Navigation Items */}
+            <a href="#teams" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+              For Teams
             </a>
-            <a href="#pricing" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
+            <a href="#developers" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
+              For Developers
+            </a>
+            <a href="#pricing" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
               Pricing
             </a>
-            <a href="#chat" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
-              AI Chat
-            </a>
-            <a href="#about" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
-              About
-            </a>
-            <a href="#contact" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
+            <a href="#contact" className="text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm">
               Contact
             </a>
           </nav>
 
-          {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Button */}
+          <div className="hidden lg:flex items-center">
             <Button 
-              variant="ghost" 
-              className="text-gray-300 hover:text-purple-400 hover:bg-purple-500/10 transition-all duration-300"
+              className="bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 text-white font-medium px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-black/20"
             >
-              Sign In
-            </Button>
-            <Button 
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-500/25"
-            >
-              Get Started
+              Launch App
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-300 hover:text-purple-400 transition-colors duration-300"
+            className="lg:hidden text-white/90 hover:text-white transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -67,34 +134,34 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-purple-500/20">
+          <div className="lg:hidden mt-4 pb-4 border-t border-white/10">
             <nav className="flex flex-col space-y-4 pt-4">
-              <a href="#features" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
+              <a href="#features" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 Features
               </a>
-              <a href="#pricing" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
+              <a href="#solutions" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+                Solutions
+              </a>
+              <a href="#learn" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+                Learn
+              </a>
+              <a href="#teams" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+                For Teams
+              </a>
+              <a href="#developers" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
+                For Developers
+              </a>
+              <a href="#pricing" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 Pricing
               </a>
-              <a href="#chat" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
-                AI Chat
-              </a>
-              <a href="#about" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
-                About
-              </a>
-              <a href="#contact" className="text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium">
+              <a href="#contact" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 Contact
               </a>
-              <div className="flex flex-col space-y-3 pt-4">
+              <div className="pt-4">
                 <Button 
-                  variant="ghost" 
-                  className="text-gray-300 hover:text-purple-400 hover:bg-purple-500/10 justify-start"
+                  className="w-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 text-white font-medium rounded-full"
                 >
-                  Sign In
-                </Button>
-                <Button 
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium rounded-lg"
-                >
-                  Get Started
+                  Launch App
                 </Button>
               </div>
             </nav>
