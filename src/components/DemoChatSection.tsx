@@ -14,9 +14,8 @@ import {
   Image as ImageIcon,
   Stop
 } from "@phosphor-icons/react";
-import { useKV } from '@github/spark/hooks';
 
-interface Message {
+interface DemoMessage {
   id: string;
   content: string;
   type: 'user' | 'ai';
@@ -28,11 +27,11 @@ interface Message {
   }>;
 }
 
-export function ChatSection() {
-  const [messages, setMessages] = useKV<Message[]>("chat-messages", [
+export function DemoChatSection() {
+  const [messages, setMessages] = useState<DemoMessage[]>([
     {
       id: "1",
-      content: "Hello! I'm your AI assistant. How can I help you today?",
+      content: "Hello! I'm your AI assistant. This is a demo chat to showcase our features. How can I help you today?",
       type: "ai",
       timestamp: new Date()
     }
@@ -41,34 +40,56 @@ export function ChatSection() {
   const [inputValue, setInputValue] = useState("");
   const [isRecording, setIsRecording] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [requestCount, setRequestCount] = useState(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
 
-    const userMessage: Message = {
+    // Limit to 4 demo requests for new users
+    if (requestCount >= 4) {
+      const limitMessage: DemoMessage = {
+        id: Date.now().toString(),
+        content: "Demo limit reached! To continue unlimited conversations, please sign up for our full service at /neochat",
+        type: "ai",
+        timestamp: new Date()
+      };
+      setMessages(current => [...current, limitMessage]);
+      return;
+    }
+
+    const userMessage: DemoMessage = {
       id: Date.now().toString(),
       content: inputValue,
       type: "user",
       timestamp: new Date()
     };
 
-    setMessages(current => [...(current ?? []), userMessage]);
+    setMessages(current => [...current, userMessage]);
     setInputValue("");
     setIsTyping(true);
+    setRequestCount(prev => prev + 1);
 
     // Simulate AI response
     setTimeout(() => {
-      const aiMessage: Message = {
+      const responses = [
+        "That's a great question! In our full version, I can provide detailed analysis and comprehensive assistance.",
+        "I understand your request. The complete AI service offers advanced features and unlimited conversations.",
+        "This demo shows just a glimpse of our capabilities. For full functionality, visit our complete platform.",
+        "Interesting! Our AI can handle complex queries with file uploads and voice messages in the full version."
+      ];
+      
+      const aiMessage: DemoMessage = {
         id: (Date.now() + 1).toString(),
-        content: "I understand your request. Let me help you with that. This is a simulated response that demonstrates the chat functionality.",
+        content: responses[Math.floor(Math.random() * responses.length)] + 
+          (requestCount >= 3 ? " (Demo: " + (4 - requestCount) + " request remaining)" : ""),
         type: "ai",
         timestamp: new Date()
       };
       
-      setMessages(current => [...(current ?? []), aiMessage]);
+      setMessages(current => [...current, aiMessage]);
       setIsTyping(false);
-    }, 2000);
+    }, 1500);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -79,48 +100,39 @@ export function ChatSection() {
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (requestCount >= 4) return;
+    
     const files = e.target.files;
     if (!files) return;
 
-    Array.from(files).forEach(file => {
-      const attachment = {
-        name: file.name,
-        type: file.type.startsWith('image/') ? 'image' as const : 'file' as const,
-        size: (file.size / 1024).toFixed(1) + ' KB'
-      };
+    const demoMessage: DemoMessage = {
+      id: Date.now().toString(),
+      content: "File upload demo - Full functionality available in complete version!",
+      type: "ai",
+      timestamp: new Date()
+    };
 
-      const message: Message = {
-        id: Date.now().toString() + Math.random(),
-        content: `Uploaded: ${file.name}`,
-        type: "user",
-        timestamp: new Date(),
-        attachments: [attachment]
-      };
-
-      setMessages(current => [...(current ?? []), message]);
-    });
+    setMessages(current => [...current, demoMessage]);
+    setRequestCount(prev => prev + 1);
   };
 
   const toggleRecording = () => {
+    if (requestCount >= 4) return;
+    
     setIsRecording(!isRecording);
     
     if (!isRecording) {
-      // Simulate voice recording
       setTimeout(() => {
         setIsRecording(false);
-        const voiceMessage: Message = {
+        const voiceMessage: DemoMessage = {
           id: Date.now().toString(),
-          content: "Voice message recorded",
-          type: "user",
-          timestamp: new Date(),
-          attachments: [{
-            name: "voice_message.wav",
-            type: "voice",
-            size: "2.3 KB"
-          }]
+          content: "Voice recording demo completed - Enhanced voice features available in full version!",
+          type: "ai",
+          timestamp: new Date()
         };
-        setMessages(current => [...(current ?? []), voiceMessage]);
-      }, 3000);
+        setMessages(current => [...current, voiceMessage]);
+        setRequestCount(prev => prev + 1);
+      }, 2000);
     }
   };
 
@@ -135,7 +147,6 @@ export function ChatSection() {
           backgroundPosition: '0 0, 15px 15px'
         }}
       />
-      {/* Additional scattered red dots */}
       <div 
         className="absolute inset-0 opacity-40"
         style={{
@@ -144,7 +155,6 @@ export function ChatSection() {
           backgroundPosition: '7px 7px'
         }}
       />
-      {/* More varied dot pattern */}
       <div 
         className="absolute inset-0 opacity-30"
         style={{
@@ -166,6 +176,9 @@ export function ChatSection() {
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Experience natural conversations with file uploads, voice messages, and intelligent responses
           </p>
+          <div className="mt-4 text-sm text-yellow-400">
+            Demo Version - 4 free requests • <a href="/neochat" className="underline hover:text-yellow-300">Get Full Access</a>
+          </div>
         </div>
 
         {/* Chat Interface */}
@@ -176,11 +189,13 @@ export function ChatSection() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
-                  <span className="font-medium text-white">AI Assistant</span>
-                  <Badge variant="secondary" className="text-xs bg-red-900/50 text-red-200 border-red-500/30">Online</Badge>
+                  <span className="font-medium text-white">AI Assistant (Demo)</span>
+                  <Badge variant="secondary" className="text-xs bg-red-900/50 text-red-200 border-red-500/30">
+                    {4 - requestCount} requests left
+                  </Badge>
                 </div>
                 <div className="text-sm text-gray-400">
-                  {(messages?.length ?? 0)} messages
+                  {messages.length} messages
                 </div>
               </div>
             </div>
@@ -188,7 +203,7 @@ export function ChatSection() {
             {/* Messages Area */}
             <ScrollArea className="h-96 p-4 bg-black/95">
               <div className="space-y-4">
-                {(messages ?? []).map((message) => (
+                {messages.map((message) => (
                   <div
                     key={message.id}
                     className={`flex gap-3 ${message.type === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
@@ -268,8 +283,9 @@ export function ChatSection() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="aspect-square p-2 border-2 border-red-500/50 bg-black/80 text-red-300 hover:bg-red-900/30 hover:border-red-400"
+                  className="aspect-square p-2 border-2 border-red-500/50 bg-black/80 text-red-300 hover:bg-red-900/30 hover:border-red-400 disabled:opacity-50"
                   onClick={() => fileInputRef.current?.click()}
+                  disabled={requestCount >= 4}
                 >
                   <Paperclip size={16} />
                 </Button>
@@ -280,8 +296,9 @@ export function ChatSection() {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Type your message..."
-                    className="pr-12 border-2 border-red-500/50 rounded-xl bg-black/80 text-gray-100 placeholder-gray-500 focus:border-red-400"
+                    placeholder={requestCount >= 4 ? "Demo limit reached - Sign up for unlimited access" : "Type your message..."}
+                    className="pr-12 border-2 border-red-500/50 rounded-xl bg-black/80 text-gray-100 placeholder-gray-500 focus:border-red-400 disabled:opacity-50"
+                    disabled={requestCount >= 4}
                   />
                 </div>
 
@@ -289,12 +306,13 @@ export function ChatSection() {
                 <Button
                   variant={isRecording ? "destructive" : "outline"}
                   size="sm"
-                  className={`aspect-square p-2 border-2 transition-all duration-200 ${
+                  className={`aspect-square p-2 border-2 transition-all duration-200 disabled:opacity-50 ${
                     isRecording 
                       ? 'border-red-400 bg-red-500/30 text-red-300 animate-pulse' 
                       : 'border-red-500/50 bg-black/80 text-red-300 hover:bg-red-900/30 hover:border-red-400'
                   }`}
                   onClick={toggleRecording}
+                  disabled={requestCount >= 4}
                 >
                   {isRecording ? <Stop size={16} /> : <Microphone size={16} />}
                 </Button>
@@ -302,9 +320,9 @@ export function ChatSection() {
                 {/* Send Button */}
                 <Button
                   size="sm"
-                  className="aspect-square p-2 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 border-0"
+                  className="aspect-square p-2 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 border-0 disabled:opacity-50"
                   onClick={handleSendMessage}
-                  disabled={!inputValue.trim()}
+                  disabled={!inputValue.trim() || requestCount >= 4}
                 >
                   <PaperPlaneRight size={16} />
                 </Button>
@@ -315,6 +333,15 @@ export function ChatSection() {
                 <div className="mt-2 flex items-center gap-2 text-sm text-red-400">
                   <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
                   Recording... Click stop to finish
+                </div>
+              )}
+
+              {/* Demo Limit Warning */}
+              {requestCount >= 4 && (
+                <div className="mt-3 p-3 bg-yellow-900/20 border border-yellow-500/30 rounded-lg">
+                  <p className="text-sm text-yellow-400 text-center">
+                    Demo limit reached! <a href="/neochat" className="underline font-medium hover:text-yellow-300">Visit NeoChat</a> for unlimited conversations and advanced features.
+                  </p>
                 </div>
               )}
             </div>

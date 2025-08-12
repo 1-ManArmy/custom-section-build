@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { AIToolSection } from "@/components/AIToolSection";
-import { ChatSection } from "@/components/ChatSection";
+import { DemoChatSection } from "@/components/DemoChatSection";
 import { TerminalDisplay } from "@/components/TerminalDisplay";
 import { BannerSection } from "@/components/BannerSection";
 import { PricingSection } from "@/components/PricingSection";
@@ -39,7 +39,7 @@ export function Homepage() {
                 <Header />
                 <HeroSection />
                 <AIToolSection />
-                <ChatSection />
+                <DemoChatSection />
                 <TerminalDisplay />
                 <BannerSection />
                 <PricingSection />
