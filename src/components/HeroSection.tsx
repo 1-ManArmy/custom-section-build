@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { TerminalDisplay } from "@/components/TerminalDisplay";
-import { Sparkles } from "@phosphor-icons/react";
+import { Terminal, Sparkles } from "@phosphor-icons/react";
 
 export function HeroSection() {
   return (
@@ -44,14 +43,47 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right Content - Terminal Interface */}
+        {/* Right Content - Terminal Preview */}
         <div className="relative w-full">
           {/* Backdrop blur effect */}
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10 rounded-3xl backdrop-blur-sm" />
           
           {/* Main container */}
-          <div className="relative bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-3xl p-6 shadow-2xl">
-            <TerminalDisplay />
+          <div className="relative bg-gray-900/80 backdrop-blur-md border border-gray-700/50 rounded-3xl p-6 shadow-2xl">
+            {/* Terminal Header */}
+            <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-700/50">
+              <div className="flex items-center gap-3">
+                <Terminal className="text-purple-400" size={20} />
+                <span className="text-sm font-medium text-gray-300">OneLast AI Preview</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+            </div>
+
+            {/* Terminal Content Preview */}
+            <div className="font-mono text-sm space-y-3">
+              <div className="flex items-center gap-2">
+                <span className="text-green-400">$</span>
+                <span className="text-gray-300">npm install onelast-ai</span>
+              </div>
+              <div className="text-purple-400 ml-4">✓ AI Revolution installed successfully</div>
+              
+              <div className="flex items-center gap-2 mt-4">
+                <span className="text-green-400">$</span>
+                <span className="text-gray-300">ai --democratize</span>
+              </div>
+              <div className="text-cyan-400 ml-4">🚀 Changing the generation...</div>
+              
+              <div className="mt-6 p-3 bg-purple-900/20 rounded-lg border border-purple-500/20">
+                <div className="text-xs text-purple-300 mb-1">// MISSION</div>
+                <div className="text-xs text-gray-400">
+                  Making AI accessible to everyone
+                </div>
+              </div>
+            </div>
             
             {/* Floating elements */}
             <div className="absolute -top-2 -right-2">
