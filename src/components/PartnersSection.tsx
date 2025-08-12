@@ -56,22 +56,16 @@ export function PartnersSection() {
           {partners.map((partner, index) => (
             <Card 
               key={index}
-              className="relative bg-card/40 backdrop-blur-sm border border-border/40 hover:border-accent/20 transition-all duration-300 hover:scale-105 group overflow-hidden shadow-lg hover:shadow-xl"
+              className="relative bg-card/40 backdrop-blur-sm border border-border/40 overflow-hidden shadow-lg"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-blue-500/15 to-purple-500/10 opacity-70"></div>
               <div className="relative p-8 flex flex-col items-center justify-center space-y-4 h-32">
-                <div className="transition-transform duration-300 group-hover:scale-110">
+                <div>
                   {partner.logo}
                 </div>
                 <h3 className="text-lg font-semibold text-card-foreground">
                   {partner.name}
                 </h3>
-              </div>
-              
-              {/* Animated border effect - thinner and more visible on hover */}
-              <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-green-400 via-blue-400 to-purple-600 animate-gradient-spin"></div>
-                <div className="absolute inset-[1px] rounded-lg bg-card/40 backdrop-blur-sm"></div>
               </div>
             </Card>
           ))}
