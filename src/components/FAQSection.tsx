@@ -8,36 +8,64 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
     {
-        question: "What is Phoenix AI Digital Friend?",
-        answer: "Phoenix AI is an advanced AI companion designed to assist you with various tasks, provide intelligent conversations, and help boost your productivity through natural language interactions."
+        question: 'What is OneLast AI?',
+        answer: 'OneLast AI is an advanced AI-powered education and productivity platform designed for youth and professionals in UAE, UK, and USA. It offers smart assistants, memory tools, and creative AI services.'
     },
     {
-        question: "How does the AI chat feature work?",
-        answer: "Our AI chat uses state-of-the-art language models to understand your queries and provide helpful, contextual responses. You can ask questions, get coding help, or have casual conversations."
+        question: 'How much does OneLast AI cost?',
+        answer: 'Our pricing is $5/month, $3/week, or $50/year. Lifetime offers are available for early adopters.'
     },
     {
-        question: "Can I upload files and documents?",
-        answer: "Yes! Phoenix AI supports file uploads including documents, images, and code files. The AI can analyze, summarize, and help you work with your uploaded content."
+        question: 'Which AI services are included?',
+        answer: 'You get access to chat assistants, document analysis, emotion AI, astrology insights, PDF tools, and more.'
     },
     {
-        question: "What programming languages are supported?",
-        answer: "Phoenix AI supports all major programming languages including Python, JavaScript, TypeScript, Go, Java, C++, and many more. It can help with code review, debugging, and optimization."
+        question: 'Is my data secure?',
+        answer: 'Yes, we use advanced encryption and follow strict privacy standards. Your data is never sold or shared.'
     },
     {
-        question: "Is my data secure and private?",
-        answer: "Absolutely. We take privacy seriously. Your conversations and uploaded files are encrypted and never shared with third parties. You have full control over your data."
+        question: 'Can I use OneLast AI on mobile?',
+        answer: 'Yes, our platform is fully responsive and works on all devices.'
     },
     {
-        question: "Can I use Phoenix AI for commercial projects?",
-        answer: "Yes, our paid plans include commercial usage rights. The AI can assist with business development, code generation, and professional projects within the terms of service."
+        question: 'How do I sign up?',
+        answer: 'Click the Sign Up button on our homepage and follow the registration steps.'
     },
     {
-        question: "What's included in the different subscription plans?",
-        answer: "Plans vary by usage limits, priority support, and advanced features. Lifetime plans include unlimited usage, priority processing, and access to all future updates."
+        question: 'What payment methods are accepted?',
+        answer: 'We accept credit cards, PayPal, and Stripe.'
     },
     {
-        question: "How do I get started?",
-        answer: "Simply sign up for an account, choose your plan, and start chatting with Phoenix AI. No setup required - you can begin using the AI immediately after registration."
+        question: 'Can I cancel my subscription?',
+        answer: 'Yes, you can cancel anytime from your account dashboard.'
+    },
+    {
+        question: 'Is there a free trial?',
+        answer: 'We offer a free trial for new users. Details are available on the pricing page.'
+    },
+    {
+        question: 'Who is Grand Pa United?',
+        answer: 'Grand Pa United is our strategic partner supporting affordable AI education for youth.'
+    },
+    {
+        question: 'How do I contact support?',
+        answer: 'You can reach us via the contact form or email support@onelastai.com.'
+    },
+    {
+        question: 'Do you offer team or enterprise plans?',
+        answer: 'Yes, we have special plans for schools, teams, and enterprises. Contact us for details.'
+    },
+    {
+        question: 'What languages are supported?',
+        answer: 'English is fully supported. More languages are coming soon.'
+    },
+    {
+        question: 'Can I integrate OneLast AI with other tools?',
+        answer: 'Yes, API access and integrations are available for developers.'
+    },
+    {
+        question: 'How do I reset my password?',
+        answer: 'Use the Forgot Password link on the login page to reset your password.'
     }
 ];
 
@@ -87,7 +115,7 @@ export function FAQSection() {
                         Frequently Asked Questions
                     </h2>
                     <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                        Everything you need to know about Phoenix AI Digital Friend and how it can help you.
+                        Everything you need to know about OneLast AI and how it can help you succeed.
                     </p>
                 </div>
 
