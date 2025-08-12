@@ -8,51 +8,51 @@ export function TerminalDisplay() {
   const [showCursor, setShowCursor] = useState(true);
   const [currentResponse, setCurrentResponse] = useState<string[]>([]);
   const [statsVisible, setStatsVisible] = useState(false);
-  
+
   // Animated counters for stats
-  const [activeUsers, setActiveUsers] = useState(0);
-  const [aiQueries, setAiQueries] = useState(0);
-  const [costSaved, setCostSaved] = useState(0);
-
-  const commands = [
-    "npm install onelast-ai",
-    "npm run stats --live",
-    "git commit -m 'Changing generations'",
-    "node ai-revolution.js"
+    ["✓ onelast-ai@2.1.0 installed", "✓ Added 247 AI
+    ["[main 1a2b3c4] Changing generations", "✓ 8
   ];
 
-  const responses = [
-    ["✓ onelast-ai@2.1.0 installed", "✓ Added 247 AI packages", "✓ Ready to democratize AI"],
-    ["📊 Fetching live statistics...", "✓ Connected to OneLast AI servers"],
-    ["[main 1a2b3c4] Changing generations", "✓ 85% youth ready for AI revolution"],
-    ["🚀 AI Revolution Started", "✓ Breaking barriers globally"]
-  ];
-
-  // Stats counter animation
-  useEffect(() => {
-    if (commandIndex === 1 && currentResponse.length > 0) {
-      setStatsVisible(true);
+    if (commandIndex
       
-      // Animate counters
-      const userInterval = setInterval(() => {
-        setActiveUsers(prev => {
+      const userInterval = setInter
           if (prev >= 12500) {
-            clearInterval(userInterval);
             return 12500;
-          }
-          return prev + 250;
-        });
-      }, 30);
+  ];
 
-      const queryInterval = setInterval(() => {
-        setAiQueries(prev => {
-          if (prev >= 2800000) {
+      const queryInte
+          if (prev >= 150000) {
+            return 150000;
+          return prev + 3000;
+      }, 25);
+  ];
+
+            return 95;
+  useEffect(() => {
+      }, 50);
+      return () => {
+      
+      };
+      setStatsVisible(false);
+      setAiQueries(0);
+          if (prev >= 12500) {
+
+            return 12500;
+    
+      setCurrentResponse(res
+      const
+        setCh
+
+      return () => clearTimeout(timer);
+
+          if (prev >= 150000) {
             clearInterval(queryInterval);
-            return 2800000;
-          }
-          return prev + 56000;
+            return 150000;
+
+          return prev + 3000;
         });
-      }, 20);
+      }, 25);
 
       const costInterval = setInterval(() => {
         setCostSaved(prev => {
@@ -62,7 +62,7 @@ export function TerminalDisplay() {
           }
           return prev + 2;
         });
-      }, 40);
+      }, 50);
 
       return () => {
         clearInterval(userInterval);
@@ -79,6 +79,8 @@ export function TerminalDisplay() {
 
   // Command cycle effect
   useEffect(() => {
+    const command = commands[commandIndex];
+    
     if (charIndex >= commands[commandIndex].length) {
       setCurrentResponse(responses[commandIndex]);
       
@@ -90,154 +92,130 @@ export function TerminalDisplay() {
       }, 3500); // Increased delay for stats viewing
       return () => clearTimeout(timer);
     }
-  }, [charIndex, commandIndex, commands]);
 
-  // Typing animation effect
-  useEffect(() => {
-    const command = commands[commandIndex];
-    
-    if (charIndex < command.length) {
-      const timer = setTimeout(() => {
-        setCurrentCommand(command.slice(0, charIndex + 1));
-        setCharIndex(charIndex + 1);
-      }, 80 + Math.random() * 40);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [charIndex, commandIndex, commands]);
+    const timer = setTimeout(() => {
+      setCurrentCommand(command.slice(0, charIndex + 1));
+      setCharIndex(charIndex + 1);
+           
+
+    return () => clearTimeout(timer);
+  }, [charIndex, commandIndex]);
 
   // Cursor blinking effect
-  useEffect(() => {
-    const interval = setInterval(() => {
+                <di
+    const timer = setInterval(() => {
       setShowCursor(prev => !prev);
     }, 530);
-    
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="min-h-screen bg-background p-4 md:p-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-card rounded-2xl border border-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 p-0.5 shadow-2xl overflow-hidden w-full min-h-[700px]">
-          <div className="bg-card rounded-xl h-full">
-            {/* Terminal Header */}
-            <div className="flex items-center justify-between px-8 py-6 bg-muted/50 border-b border-purple-500/50">
-              <div className="flex items-center gap-4">
-                <Terminal className="text-muted-foreground" size={24} />
-                <span className="text-base font-medium text-card-foreground">OneLast AI Terminal</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-                <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
-                <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-              </div>
-            </div>
+    <div className="relative py-20 px-4 overflow-hidden">
+      {/* Background with animated dots pattern */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-gray-800/20"></div>
 
-            {/* Terminal Content */}
-            <div className="p-8 space-y-6 font-mono min-h-[600px]">
-              {/* Animated Typing SVG */}
-              <div className="flex justify-center mb-8">
-                <img 
-                  src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=2000&pause=1000&color=A855F7&center=true&vCenter=true&width=600&lines=Democratizing+AI+for+Everyone;Changing+the+Generation;Your+AI+Digital+Friend" 
-                  alt="Typing SVG: OneLast AI Mission" 
-                  className="max-w-full h-auto"
-                />
-              </div>
+          className="absolute inset-0"
 
-              {/* Command Input */}
-              <div className="flex items-center gap-3 text-lg">
-                <span className="text-green-400">$</span>
-                <span className="text-card-foreground">
-                  {currentCommand}
-                  {showCursor && <span className="text-purple-400">█</span>}
-                </span>
-              </div>
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(220, 38, 38, 0.4) 1px, transparent 0)`,
+            backgroundSize: '40px 40px',
+            animation: 'float 6s ease-in-out infinite'
+          }}
+        />
 
-              {/* Command Response */}
-              {currentResponse.length > 0 && (
-                <div className="space-y-2 text-muted-foreground text-base">
-                  {currentResponse.map((line, index) => (
-                    <div key={index} className="animate-fadeIn">
-                      {line}
-                    </div>
-                  ))}
-                </div>
-              )}
 
-              {/* Stats Display - Shows when stats command runs */}
-              {statsVisible && (
-                <div className="mt-6 p-4 border border-purple-500/30 rounded-lg bg-purple-900/10 animate-fadeIn">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                    <div className="space-y-1">
-                      <div className="text-purple-400">👥 Active Users</div>
-                      <div className="text-2xl font-bold text-white">
-                        {activeUsers.toLocaleString()}+
-                      </div>
-                      <div className="text-xs text-gray-500">Youth embracing AI</div>
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-cyan-400">🧠 AI Queries</div>
-                      <div className="text-2xl font-bold text-white">
-                        {aiQueries.toLocaleString()}+
-                      </div>
-                      <div className="text-xs text-gray-500">Knowledge generated</div>
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-green-400">💰 Cost Saved</div>
-                      <div className="text-2xl font-bold text-white">
-                        {costSaved}%
-                      </div>
-                      <div className="text-xs text-gray-500">vs competitors</div>
-                    </div>
-                  </div>
-                  
-                  {/* Additional Stats Row */}
-                  <div className="mt-4 pt-4 border-t border-purple-500/20 grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center justify-between">
-                      <span className="text-indigo-400">🌍 Countries Active</span>
-                      <span className="text-white font-bold">3 (UAE, UK, USA)</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-pink-400">🎯 Success Rate</span>
-                      <span className="text-white font-bold">98.7%</span>
-                    </div>
-                  </div>
-                </div>
-              )}
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* Left Side - United Mission */}
+          <div className="space-y-6">
+            <div className="p-6 bg-gradient-to-r from-purple-900/30 to-indigo-900/30 rounded-lg border border-purple-500/30">
+              <h3 className="text-2xl font-bold text-purple-300 text-left tracking-wide mb-4">UNITED MISSION</h3>
+              
+              <div className="space-y-4">
 
-              {/* Live Status Indicator */}
-              <div className="flex items-center justify-between pt-6 border-t border-gradient-to-r from-cyan-400 to-purple-500">
-                <div className="flex items-center gap-3 text-base">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-green-400">Connected to OneLast AI</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-ping"></div>
-                  <div className="text-gray-500 text-sm">
-                    287 users online
-                  </div>
-                </div>
-              </div>
+                  src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=50&pause=1000&color=FF0000&color=A855F7&color=00FF00&center=false&vCenter=true&width=600&lines=Empowering+Youth+Through+AI+-+We+believe+the+future+belongs+to+those+who+understand+it.+That's+why+we're+introducing+young+minds+to+the+world+of+Artificial+Intelligence+in+a+way+that's+creative,+engaging,+and+practical.+Our+mission+is+to+inspire+curiosity,+spark+innovation,+and+provide+the+tools+needed+for+a+smarter,+faster,+and+more+adaptable+tomorrow.+With+interactive+modules,+real-world+projects,+and+fresh+perspectives,+we're+building+a+generation+ready+to+shape+the+future+—+not+just+live+in+it."
+                  alt="Empowering Youth Through AI Animation"
+                  className="w-full"
 
-              {/* United Mission Section - Left Aligned */}
-              <div className="mt-6 p-6 bg-gradient-to-r from-purple-900/20 to-indigo-900/20 rounded-lg border border-purple-500/20">
-                <div className="flex flex-col items-start">
-                  <h3 className="text-2xl font-bold text-purple-300 tracking-wide mb-6">UNITED MISSION</h3>
-                  
-                  {/* Animated Typing SVG - Multiple Lines for Better Wrapping */}
-                  <div className="w-full space-y-2 break-words overflow-hidden">
-                    <img 
-                      src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=A855F7&center=false&vCenter=true&width=900&lines=Empowering+Youth+Through+AI;We+believe+the+future+belongs+to+those+who+understand+it;Introducing+young+minds+to+AI+in+creative+ways;Our+mission+is+to+inspire+curiosity+and+spark+innovation;Building+a+generation+ready+to+shape+the+future" 
-                      alt="Empowering Youth Through AI Animation"
-                      className="w-full h-auto max-w-full"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+
+          {/* Right Side - Terminal */}
+          <div className="bg-gray-900/80 backdrop-blur-lg rounded-lg border-4 border-purple-500/50 shadow-2xl overflow-hidden">
+            {/* Terminal Header */}
+            <div className="bg-gray-800/90 px-4 py-3 flex items-center gap-3 border-b border-purple-500/30">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <Terminal size={16} />
+                <span className="text-sm font-mono">OneLast AI Terminal</span>
+              </div>
+            </div>
+
+            {/* Terminal Body */}
+            <div className="p-6 font-mono text-sm min-h-[500px] space-y-4">
+              {/* Current Command Line */}
+              <div className="flex items-center gap-2">
+                <span className="text-cyan-400">onelast@ai:~$</span>
+                <span className="text-white">{currentCommand}</span>
+                {showCursor && <span className="text-white bg-white w-2 h-4 inline-block animate-pulse">|</span>}
+              </div>
+
+              {/* Command Response */}
+              {currentResponse.map((line, index) => (
+                <div key={index} className="text-green-400 animate-fadeIn">
+                  {line}
+                </div>
+
+
+
+              {statsVisible && (
+                <div className="mt-6 p-4 bg-gradient-to-r from-cyan-900/20 to-purple-900/20 rounded-lg border border-cyan-500/20">
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="flex items-center justify-between">
+                      <span className="text-cyan-400">👥 Active Users</span>
+                      <span className="text-white font-bold">{activeUsers.toLocaleString()}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-blue-400">⚡ AI Queries</span>
+                      <span className="text-white font-bold">{aiQueries.toLocaleString()}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-green-400">💰 Cost Saved</span>
+                      <span className="text-white font-bold">{costSaved}%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-indigo-400">🌍 Countries Active</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
