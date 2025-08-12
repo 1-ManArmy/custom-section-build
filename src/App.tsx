@@ -1,6 +1,5 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
-import { BrandSection } from "@/components/BrandSection";
 import { AIToolSection } from "@/components/AIToolSection";
 import { ChatSection } from "@/components/ChatSection";
 import { TerminalDisplay } from "@/components/TerminalDisplay";
@@ -40,7 +39,6 @@ function App() {
             <div className="relative z-10">
                 <Header />
                 <HeroSection />
-                <BrandSection />
                 <AIToolSection />
                 <ChatSection />
                 <TerminalDisplay />
