@@ -36,7 +36,7 @@ export { default as ResetPasswordPage } from './ResetPasswordPage';
 export { default as SubscriptionPage } from './SubscriptionPage';
 
 // AI Service Pages
-export { ChatPage } from './ChatPage';
+export { default as ChatPage } from './ChatPage';
 export { MoodAnalyzerPage } from './MoodAnalyzerPage';
 export { CinematicPage } from './CinematicPage';
 export { CreatorToolsPage } from './CreatorToolsPage';
