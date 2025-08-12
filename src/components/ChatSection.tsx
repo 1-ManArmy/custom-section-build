@@ -53,7 +53,7 @@ export function ChatSection() {
       timestamp: new Date()
     };
 
-    setMessages(current => [...current, userMessage]);
+    setMessages(current => [...(current ?? []), userMessage]);
     setInputValue("");
     setIsTyping(true);
 
@@ -66,7 +66,7 @@ export function ChatSection() {
         timestamp: new Date()
       };
       
-      setMessages(current => [...current, aiMessage]);
+      setMessages(current => [...(current ?? []), aiMessage]);
       setIsTyping(false);
     }, 2000);
   };
@@ -97,7 +97,7 @@ export function ChatSection() {
         attachments: [attachment]
       };
 
-      setMessages(current => [...current, message]);
+      setMessages(current => [...(current ?? []), message]);
     });
   };
 
@@ -119,7 +119,7 @@ export function ChatSection() {
             size: "2.3 KB"
           }]
         };
-        setMessages(current => [...current, voiceMessage]);
+        setMessages(current => [...(current ?? []), voiceMessage]);
       }, 3000);
     }
   };
@@ -180,7 +180,7 @@ export function ChatSection() {
                   <Badge variant="secondary" className="text-xs bg-red-900/50 text-red-200 border-red-500/30">Online</Badge>
                 </div>
                 <div className="text-sm text-gray-400">
-                  {messages.length} messages
+                  {(messages?.length ?? 0)} messages
                 </div>
               </div>
             </div>
@@ -188,7 +188,7 @@ export function ChatSection() {
             {/* Messages Area */}
             <ScrollArea className="h-96 p-4 bg-black/95">
               <div className="space-y-4">
-                {messages.map((message) => (
+                {(messages ?? []).map((message) => (
                   <div
                     key={message.id}
                     className={`flex gap-3 ${message.type === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
