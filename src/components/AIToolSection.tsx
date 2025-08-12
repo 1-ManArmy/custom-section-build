@@ -40,20 +40,7 @@ export const AIToolSection = () => {
                             <div className="w-32 h-32 relative">
                                 {/* Main AI Symbol */}
                                 <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-cyan-300 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                                    {/* Top dots (eyes) */}
-                                    <div className="absolute top-5 left-1/2 transform -translate-x-1/2 flex space-x-3">
-                                        <div className="w-3 h-3 bg-slate-900 rounded-full" />
-                                        <div className="w-3 h-3 bg-slate-900 rounded-full" />
-                                    </div>
-                                    
-                                    {/* Mouth/Speaker */}
-                                    <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-10 h-5 bg-slate-900 rounded-full flex items-center justify-center">
-                                        <div className="w-8 h-3 bg-cyan-300 rounded-full" />
-                                    </div>
-                                    
-                                    {/* Side appendages */}
-                                    <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-5 h-10 bg-cyan-400 rounded-r-lg" />
-                                    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1 w-5 h-10 bg-cyan-400 rounded-l-lg" />
+
                                 </div>
                                 
 
