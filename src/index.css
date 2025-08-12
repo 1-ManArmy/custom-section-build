@@ -23,6 +23,34 @@
   .animate-grid-move {
     animation: grid-move 20s linear infinite;
   }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-gpu {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .rotateY-5 {
+    transform: rotateY(5deg);
+  }
+  
+  .rotateX-5 {
+    transform: rotateX(5deg);
+  }
+  
+  .rotateY-90 {
+    transform: rotateY(90deg);
+  }
+  
+  .rotateX-90 {
+    transform: rotateX(90deg);
+  }
 }
 
 @keyframes fadeIn {
@@ -65,10 +93,22 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
-  50% {
-    transform: translateY(-10px);
+  33% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+}
+
+@keyframes circuit-flow {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
   }
 }
 
