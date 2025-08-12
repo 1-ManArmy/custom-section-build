@@ -22,6 +22,21 @@ import {
   PartnersPage,
   SecurityPage,
   PrivacyPage,
+  // Core Domain Pages
+  PrivacyPolicyPage,
+  TermsConditionsPage,
+  AboutUsPage,
+  ContactUsPage,
+  SupportTicketPage,
+  SuggestionsPage,
+  UpcomingModulesPage,
+  OneLastAIModulesPage,
+  OneManArmyPage,
+  SignInPage,
+  SignUpPage,
+  ForgotPasswordPage,
+  ResetPasswordPage,
+  SubscriptionPage,
   // AI Service Pages
   ChatPage,
   MoodAnalyzerPage,
@@ -91,6 +106,22 @@ function App() {
                         <Route path="/partners" element={<PartnersPage />} />
                         <Route path="/security" element={<SecurityPage />} />
                         <Route path="/privacy" element={<PrivacyPage />} />
+                        
+                        {/* Core Domain Pages */}
+                        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                        <Route path="/terms-conditions" element={<TermsConditionsPage />} />
+                        <Route path="/about-us" element={<AboutUsPage />} />
+                        <Route path="/contact-us" element={<ContactUsPage />} />
+                        <Route path="/support-ticket" element={<SupportTicketPage />} />
+                        <Route path="/suggestions" element={<SuggestionsPage />} />
+                        <Route path="/upcoming-modules" element={<UpcomingModulesPage />} />
+                        <Route path="/upcoming-modules/onelastai" element={<OneLastAIModulesPage />} />
+                        <Route path="/upcoming-modules/onemanarmy" element={<OneManArmyPage />} />
+                        <Route path="/signin" element={<SignInPage />} />
+                        <Route path="/signup" element={<SignUpPage />} />
+                        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+                        <Route path="/reset-password" element={<ResetPasswordPage />} />
+                        <Route path="/subscription" element={<SubscriptionPage />} />
                         
                         {/* AI Service Subdomains - Available as Routes */}
                         <Route path="/neochat" element={<ChatPage />} />

@@ -19,6 +19,22 @@ export { PartnersPage } from './PartnersPage';
 export { SecurityPage } from './SecurityPage';
 export { PrivacyPage } from './PrivacyPage';
 
+// Core Domain Pages
+export { default as PrivacyPolicyPage } from './PrivacyPolicyPage';
+export { default as TermsConditionsPage } from './TermsConditionsPage';
+export { default as AboutUsPage } from './AboutUsPage';
+export { default as ContactUsPage } from './ContactUsPage';
+export { default as SupportTicketPage } from './SupportTicketPage';
+export { default as SuggestionsPage } from './SuggestionsPage';
+export { default as UpcomingModulesPage } from './UpcomingModulesPage';
+export { default as OneLastAIModulesPage } from './OneLastAIModulesPage';
+export { default as OneManArmyPage } from './OneManArmyPage';
+export { default as SignInPage } from './SignInPage';
+export { default as SignUpPage } from './SignUpPage';
+export { default as ForgotPasswordPage } from './ForgotPasswordPage';
+export { default as ResetPasswordPage } from './ResetPasswordPage';
+export { default as SubscriptionPage } from './SubscriptionPage';
+
 // AI Service Pages
 export { ChatPage } from './ChatPage';
 export { MoodAnalyzerPage } from './MoodAnalyzerPage';
