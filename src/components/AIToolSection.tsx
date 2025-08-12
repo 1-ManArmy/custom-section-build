@@ -40,7 +40,6 @@ export const AIToolSection = () => {
                             <div className="w-32 h-32 relative">
                                 {/* Main AI Symbol */}
                                 <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-cyan-300 rounded-2xl flex items-center justify-center relative overflow-hidden">
-
                                 </div>
                                 
 
