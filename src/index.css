@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
 
 @layer base {
   * {
@@ -50,6 +49,47 @@
   
   .rotateX-90 {
     transform: rotateX(90deg);
+  }
+
+  /* Section spacing utilities */
+  .section-spacing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section-spacing {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+  
+  .section-spacing-sm {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section-spacing-sm {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+  /* Section separator */
+  .section-separator {
+    position: relative;
+  }
+  
+  .section-separator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.5), transparent);
   }
 }
 

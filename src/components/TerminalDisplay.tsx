@@ -130,7 +130,7 @@ export function TerminalDisplay() {
   }, []);
 
   return (
-    <div className="relative py-20 px-4 overflow-hidden">
+    <div className="relative py-28 md:py-36 px-4 overflow-hidden">
       {/* Background with animated dots pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-gray-800/20"></div>

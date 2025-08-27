@@ -69,7 +69,7 @@ export function PricingSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-background relative overflow-hidden">
+    <section className="py-28 md:py-36 px-6 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5"></div>
       <div className="max-w-7xl mx-auto relative">

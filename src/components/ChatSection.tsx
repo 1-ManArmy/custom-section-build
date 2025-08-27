@@ -14,7 +14,13 @@ import {
   Image as ImageIcon,
   Stop
 } from "@phosphor-icons/react";
-import { useKV } from '@github/spark/hooks';
+// import { useKV } from '@github/spark/hooks'; // Temporarily commented out
+
+// Temporary replacement for useKV hook
+function useKV<T>(key: string, defaultValue: T): [T, React.Dispatch<React.SetStateAction<T>>] {
+  const [value, setValue] = useState<T>(defaultValue);
+  return [value, setValue];
+}
 
 interface Message {
   id: string;

@@ -3,7 +3,7 @@ import { Download, Star, Users } from "@phosphor-icons/react";
 
 export function BannerSection() {
   return (
-    <div className="py-24 bg-gradient-to-r from-purple-900/30 via-pink-800/20 to-blue-900/30 relative overflow-hidden">
+    <div className="py-28 md:py-36 bg-gradient-to-r from-purple-900/30 via-pink-800/20 to-blue-900/30 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-pink-600/5 to-blue-600/10"></div>
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>

@@ -29,7 +29,7 @@ export function StatsSection() {
   ];
 
   return (
-    <div className="py-20 bg-gradient-to-br from-purple-950/30 via-transparent to-blue-950/30 relative overflow-hidden">
+    <div className="py-28 md:py-36 bg-gradient-to-br from-purple-950/30 via-transparent to-blue-950/30 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(147,51,234,0.1),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>

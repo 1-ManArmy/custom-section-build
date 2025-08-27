@@ -8,16 +8,16 @@ import { PricingSection } from "@/components/PricingSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { CardSection } from "@/components/CardSection";
 import { FAQSection } from "@/components/FAQSection";
-import { EnvironmentStatus } from "@/components/EnvironmentStatus";
+import { EnvironmentStatus } from "@/components/SafeEnvironmentStatus";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Settings } from "@phosphor-icons/react";
+import { Gear } from "@phosphor-icons/react";
 
 export function HomePage() {
   const [showEnvStatus, setShowEnvStatus] = useState(false);
 
   return (
-    <div>
+    <div className="w-full">
       {/* Environment Status - Show in development or when requested */}
       {(import.meta.env.VITE_APP_ENVIRONMENT === 'development' || showEnvStatus) && (
         <div className="container mx-auto px-4 py-4">
@@ -28,16 +28,46 @@ export function HomePage() {
         </div>
       )}
 
-      <HeroSection />
-      <AIToolSection />
-      <DemoChatSection />
-      <TerminalDisplay />
-      <StatsSection />
-      <BannerSection />
-      <PricingSection />
-      <PartnersSection />
-      <CardSection />
-      <FAQSection />
+      {/* Main content sections with proper spacing */}
+      <section className="relative">
+        <HeroSection />
+      </section>
+      
+      <section className="relative py-24 md:py-32">
+        <AIToolSection />
+      </section>
+      
+      <section className="relative py-20 md:py-28">
+        <DemoChatSection />
+      </section>
+      
+      <section className="relative py-20 md:py-28">
+        <TerminalDisplay />
+      </section>
+      
+      <section className="relative py-24 md:py-32">
+        <StatsSection />
+      </section>
+      
+      <section className="relative py-20 md:py-28">
+        <BannerSection />
+      </section>
+      
+      <section className="relative py-24 md:py-32">
+        <PricingSection />
+      </section>
+      
+      <section className="relative py-20 md:py-28">
+        <PartnersSection />
+      </section>
+      
+      <section className="relative py-20 md:py-28">
+        <CardSection />
+      </section>
+      
+      <section className="relative py-24 md:py-32">
+        <FAQSection />
+      </section>
 
       {/* Environment Status Toggle (Hidden in production) */}
       {import.meta.env.VITE_APP_ENVIRONMENT !== 'production' && !showEnvStatus && (
@@ -48,7 +78,7 @@ export function HomePage() {
             onClick={() => setShowEnvStatus(true)}
             className="bg-black/50 backdrop-blur border-white/20 text-white hover:bg-white/10"
           >
-            <Settings className="h-4 w-4 mr-2" />
+            <Gear className="h-4 w-4 mr-2" />
             Environment
           </Button>
         </div>

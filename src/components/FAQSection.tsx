@@ -81,7 +81,7 @@ export function FAQSection() {
     };
 
     return (
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-28 md:py-36 overflow-hidden">
             {/* Animated Background with Purple/Pink Theme */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-pink-950/30 to-purple-900/40" />
             

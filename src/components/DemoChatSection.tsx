@@ -137,7 +137,7 @@ export function DemoChatSection() {
   };
 
   return (
-    <section className="py-16 px-6 relative bg-black overflow-hidden">
+    <section className="py-24 md:py-32 px-6 relative bg-black overflow-hidden">
       {/* Red Dotted Background Pattern */}
       <div 
         className="absolute inset-0 opacity-60"
